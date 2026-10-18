@@ -106,6 +106,31 @@ def wedge(axis, lo, hi, z0, z1, tex="clip"):
     out.append("}")
     return "\n".join(out)
 
+def prism(poly, z0, z1, side_tex, cap_tex):
+    """Vertical prism over a 2D polygon [(x, y), ...] (any winding). Each side face gets
+    Valve texture axes along its edge so textures don't smear on diagonals."""
+    import numpy as _np
+    side_tex, cap_tex = role_tex(side_tex), role_tex(cap_tex)
+    n = len(poly)
+    faces = []
+    cap = "[ 1 0 0 0 ] [ 0 -1 0 0 ]"
+    faces.append((((poly[0][0], poly[0][1], z1), (poly[1][0], poly[1][1], z1), (poly[2][0], poly[2][1], z1)), cap_tex, cap))
+    faces.append((((poly[0][0], poly[0][1], z0), (poly[1][0], poly[1][1], z0), (poly[2][0], poly[2][1], z0)), cap_tex, cap))
+    for i in range(n):
+        (ax, ay), (bx, by) = poly[i], poly[(i + 1) % n]
+        L = math.hypot(bx - ax, by - ay); ux, uy = (bx - ax) / L, (by - ay) / L
+        axes = f"[ {ux:.4f} {uy:.4f} 0 0 ] [ 0 0 -1 0 ]"
+        faces.append((((ax, ay, z0), (bx, by, z0), (bx, by, z1)), side_tex, axes))
+    cen = _np.array([(x, y, (z0 + z1) / 2) for x, y in poly], dtype=float).mean(axis=0)
+    out = ["{"]
+    for pts, tex, axes in faces:
+        p = _np.array(pts, dtype=float)
+        nrm = _np.cross(p[0] - p[1], p[2] - p[1])
+        if _np.dot(nrm, p[1] - cen) < 0: pts = (pts[0], pts[2], pts[1])
+        out.append(" ".join(f"( {a:g} {b:g} {c:g} )" for a, b, c in pts) + f" {tex} {axes} 0 1 1")
+    out.append("}")
+    return "\n".join(out)
+
 def merge_rects(cells):
     cells = set(cells); rects = []
     while cells:
@@ -176,11 +201,28 @@ def build(level):
     # --- walls on void edges: skirting (16u) + panel + cornice (16u), full base->top so the map seals
     # edge keys: direction -> set of (k, i) runs; panel texture chosen per run by hash
     E, W_, S, N = set(), set(), set(), set()
+    corners = {}      # room cell with exactly two adjacent void sides -> which (ew, ns)
     for (x, y), c in cells.items():
-        if (x + 1, y) not in cells: E.add((x, y))
-        if (x - 1, y) not in cells: W_.add((x, y))
-        if (x, y + 1) not in cells: S.add((y, x))
-        if (x, y - 1) not in cells: N.add((y, x))
+        ve, vw, vs, vn = (x + 1, y) not in cells, (x - 1, y) not in cells, (x, y + 1) not in cells, (x, y - 1) not in cells
+        if (x, y) in room_of and c["t"] == FLOOR and (ve != vw) and (vs != vn):
+            corners[(x, y)] = (1 if ve else -1, 1 if vs else -1)
+            continue          # the diagonal prism replaces this cell's two outer walls
+        if ve: E.add((x, y))
+        if vw: W_.add((x, y))
+        if vs: S.add((y, x))
+        if vn: N.add((y, x))
+    for (x, y), (ew, ns) in corners.items():
+        c = cells[(x, y)]; fz, cz = floor_u(c), ceil_of(c)
+        X0, X1, Z0, Z1 = x * CELL, (x + 1) * CELL, Y(y + 1), Y(y)        # Z0 = south (screen down), Z1 = north
+        # the solid half on the void side: three corners of the cell
+        if (ew, ns) == (1, 1):    poly = [(X1, Z1), (X1, Z0), (X0, Z0)]     # E & S void: SE half, hypotenuse NE->SW
+        if (ew, ns) == (1, -1):   poly = [(X1, Z0), (X1, Z1), (X0, Z1)]     # E & N void: NE half
+        if (ew, ns) == (-1, 1):   poly = [(X0, Z1), (X0, Z0), (X1, Z0)]     # W & S void: SW half
+        if (ew, ns) == (-1, -1):  poly = [(X0, Z0), (X0, Z1), (X1, Z1)]     # W & N void: NW half
+        panel = panel_tex(hash01(x * 5 + 1, y * 3 + 2))
+        layers["skirting"].append(prism(poly, base, fz + 16, "kick", "kick"))
+        layers["panel"].append(prism(poly, fz + 16, cz - 16, panel, panel))
+        layers["cornice"].append(prism(poly, cz - 16, top, "chamfer", "chamfer"))
     def wall_run(x0, y0, x1, y1, floor_z, ceil_z, key):
         """x0..x1 / y0..y1 in quake units (thin box). Splits into skirting / panel / cornice."""
         t = hash01(*key)
@@ -210,10 +252,12 @@ def build(level):
     for x, y0, y1, fz, cz in edge_runs(W_, True):
         wall_run(x * CELL - 16, Y(y1), x * CELL, Y(y0), fz, cz, (x - 1, y0))
     for y, x0, x1, fz, cz in edge_runs(S, False):      # void row is y+1
-        xs = x0 * CELL + (16 if at((x0 - 1, y + 1)) else 0); xe = x1 * CELL - (16 if at((x1, y + 1)) else 0)
+        xs = x0 * CELL + (16 if at((x0 - 1, y + 1)) and (x0 - 1, y + 1) not in corners else 0)
+        xe = x1 * CELL - (16 if at((x1, y + 1)) and (x1, y + 1) not in corners else 0)
         wall_run(xs, Y(y + 1) - 16, xe, Y(y + 1), fz, cz, (x0, y + 1))
     for y, x0, x1, fz, cz in edge_runs(N, False):      # void row is y-1
-        xs = x0 * CELL + (16 if at((x0 - 1, y - 1)) else 0); xe = x1 * CELL - (16 if at((x1, y - 1)) else 0)
+        xs = x0 * CELL + (16 if at((x0 - 1, y - 1)) and (x0 - 1, y - 1) not in corners else 0)
+        xe = x1 * CELL - (16 if at((x1, y - 1)) and (x1, y - 1) not in corners else 0)
         wall_run(xs, Y(y), xe, Y(y) + 16, fz, cz, (x0, y - 1))
 
     # --- border grate strips along walls and risers (12u wide, 2u tall on the floor)
@@ -223,6 +267,7 @@ def build(level):
         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             o = at((x + dx, y + dy))
             if o and floor_u(o) <= fz: continue
+            if (x, y) in corners and not o: continue
             if dx == 1: layers["border"].append(box(X + CELL - 12, Z0, fz, X + CELL, Z1, fz + 2, "floor_grate"))
             if dx == -1: layers["border"].append(box(X, Z0, fz, X + 12, Z1, fz + 2, "floor_grate"))
             if dy == 1: layers["border"].append(box(X, Z0, fz, X + CELL, Z0 + 12, fz + 2, "floor_grate"))
