@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/door.gd" id="1"]
+[ext_resource type="Shader" path="res://art/shaders/glow.gdshader" id="2"]
+
+[sub_resource type="ShaderMaterial" id="spark_mat"]
+shader = ExtResource("2")
+shader_parameter/color = Color(1, 0.75, 0.3, 1)
+shader_parameter/energy = 4.0
+
+[sub_resource type="BoxMesh" id="spark"]
+material = SubResource("spark_mat")
+size = Vector3(0.04, 0.04, 0.04)
+
+[sub_resource type="Curve" id="shrink"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="lamp_mat"]
+resource_local_to_scene = true
+shader = ExtResource("2")
+shader_parameter/color = Color(0.35, 0.9, 1, 1)
+shader_parameter/energy = 2.0
+
+[sub_resource type="BoxMesh" id="lamp_box"]
+resource_local_to_scene = true
+material = SubResource("lamp_mat")
+size = Vector3(0.8, 0.05, 0.3)
+
+[node name="Door" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Body" type="AnimatableBody3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="Body"]
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+
+[node name="Lamp" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
+light_color = Color(0.35, 0.9, 1, 1)
+light_energy = 0.4
+omni_range = 3.0
+
+[node name="LampGlow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
+cast_shadow = 0
+mesh = SubResource("lamp_box")
+
+[node name="LampGlowBack" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
+cast_shadow = 0
+mesh = SubResource("lamp_box")
+
+[node name="Sparks" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0, 0)
+cast_shadow = 0
+emitting = false
+amount = 24
+lifetime = 0.7
+explosiveness = 0.85
+randomness = 0.6
+mesh = SubResource("spark")
+emission_shape = 3
+emission_box_extents = Vector3(0.8, 0.05, 0.15)
+direction = Vector3(0, -1, 0)
+spread = 60.0
+gravity = Vector3(0, -9, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.5
+scale_amount_curve = SubResource("shrink")

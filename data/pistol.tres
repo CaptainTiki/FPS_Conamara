@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon_data.gd" id="1"]
+[ext_resource type="ArrayMesh" path="res://kit/pistol.res" id="2"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Sidearm"
+damage = 7.0
+pellets = 1
+spread_deg = 0.7
+fire_interval = 0.26
+max_range = 90.0
+ammo_per_shot = 0
+max_ammo = 0
+start_ammo = 0
+knockback = 2.0
+viewmodel = ExtResource("2")
+viewmodel_offset = Vector3(0.2, -0.17, -0.38)
+recoil_kick = 0.05
+recoil_pitch_deg = 4.0
+tracer_color = Color(1, 0.75, 0.3, 1)

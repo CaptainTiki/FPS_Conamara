@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1"]
+[ext_resource type="Shader" path="res://art/shaders/glow.gdshader" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/fx/orb_pop.tscn" id="3"]
+
+[sub_resource type="SphereShape3D" id="shape"]
+radius = 0.25
+
+[sub_resource type="ShaderMaterial" id="mat"]
+shader = ExtResource("2")
+shader_parameter/color = Color(1, 0.3, 0.78, 1)
+shader_parameter/energy = 3.0
+
+[sub_resource type="SphereMesh" id="ball"]
+material = SubResource("mat")
+radius = 0.2
+height = 0.4
+radial_segments = 8
+rings = 4
+
+[node name="Orb" type="Area3D"]
+collision_layer = 8
+collision_mask = 3
+monitorable = false
+script = ExtResource("1")
+impact_fx = ExtResource("3")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("shape")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = SubResource("ball")
+
+[node name="Light" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.3, 0.75, 1)
+light_energy = 1.4
+omni_range = 4.0

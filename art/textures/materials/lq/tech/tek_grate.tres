@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/tek_grate.png" id="1_5uihm"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/tek_grate_normal.png" id="2_2fk6m"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/tek_grate_roughness.png" id="3_g4svy"]
+
+[resource]
+albedo_texture = ExtResource("1_5uihm")
+metallic = 0.3
+metallic_specular = 0.45
+roughness_texture = ExtResource("3_g4svy")
+emission_energy_multiplier = 2.5
+normal_enabled = true
+normal_texture = ExtResource("2_2fk6m")
+texture_filter = 2

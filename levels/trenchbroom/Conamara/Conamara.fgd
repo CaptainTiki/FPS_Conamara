@@ -1,0 +1,113 @@
+@BaseClass size(-8 -8 -8, 8 8 8) color(204 204 204) = Phong
+[
+	_phong(choices) : "Phong shading" : 0 = 
+	[
+		0 : "Disabled"
+		1 : "Smooth shading"
+	]
+	_phong_angle(float) : "Phong smoothing angle" : "89.0"
+]
+
+@BaseClass size(-8 -8 -8, 8 8 8) color(204 204 204) = VertexMergeDistance
+[
+	_vertex_merge_distance(float) : "Adjustable value to snap vertices to on map build. This can reduce instances of seams between polygons." : "0.03125"
+]
+
+@BaseClass size(-8 -8 -8, 8 8 8) color(204 204 204) = CullInteriorFaces
+[
+	_cull_interior_faces(choices) : "If true, cull interior faces with matching vertices or faces that are flush within a larger face. Note: This has a performance impact that scales with how many brushes are in the brush entity." : 0 = 
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+]
+
+@SolidClass color(204 204 204) base(VertexMergeDistance, CullInteriorFaces) = worldspawn : "Default static world geometry. Builds a StaticBody3D with a single MeshInstance3D and a single convex CollisionShape3D shape." []
+
+@SolidClass color(204 204 204) base(Phong, VertexMergeDistance, CullInteriorFaces) = func_geo : "Static collidable geometry. Builds a StaticBody3D with a MeshInstance3D, a single concave CollisionShape3D, and an OccluderInstance3D." []
+
+@SolidClass color(204 204 204) base(Phong, VertexMergeDistance, CullInteriorFaces) = func_detail : "Static collidable geometry. Builds a StaticBody3D with a MeshInstance3D and a single concave CollisionShape3D. Does not occlude other VisualInstance3D nodes." []
+
+@SolidClass color(204 204 204) base(Phong, VertexMergeDistance, CullInteriorFaces) = func_detail_illusionary : "Static geometry with no collision. Builds a Node3D with a MeshInstance3D. Does not occlude other VisualInstance3D nodes." []
+
+@SolidClass color(204 204 204) base(Phong, VertexMergeDistance, CullInteriorFaces) = func_illusionary : "Static geometry with no collision. Builds a Node3D with a MeshInstance3D and an Occluder3D to aid in render culling of other VisualInstance3D nodes." []
+@PointClass size(-16 -16 -28, 16 16 28) color(153 217 255) = info_player_start : "Player spawn. Faces 'angle'." 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-8 -8 -8, 8 8 8) color(255 217 102) = light : "Omni light. light_color 'r g b', light_energy, omni_range (metres)." 
+[
+	light_color(color255) : "" : "255 230 194"
+	light_energy(float) : "" : "2.0"
+	omni_range(float) : "" : "8.0"
+	shadow_enabled(choices) : "" : 0 = 
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+]
+
+@PointClass size(-24 -4 -52, 24 4 52) color(153 217 255) = prop_door : "Door scene. 'angle' 0 = slab across X (corridor runs E-W), 90 = across Y." 
+[
+	angle(float) : "" : "0.0"
+	lock(string) : "" : "none"
+	slab_width(float) : "" : "1.5"
+	texture(string) : "" : "tb/door"
+]
+
+@PointClass size(-4 -4 -4, 4 4 4) color(255 102 102) = shot : "Screenshot marker for -- --capture (camera at origin, facing angle)." 
+[
+	angle(float) : "" : "0.0"
+	shot_name(string) : "" : "shot"
+]
+
+@PointClass size(-16 -16 -16, 16 16 16) color(153 217 255) = prop_crate : "Collider scene res://scenes/props/crate.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-16 -16 -32, 16 16 32) color(153 217 255) = prop_crate_stack : "Collider scene res://scenes/props/crate_stack.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-8 -8 -16, 8 8 16) color(153 217 255) = prop_canister : "Collider scene res://scenes/props/explosive.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-20 -12 -20, 20 12 20) color(153 217 255) = prop_console : "Collider scene res://scenes/props/switch_console.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-12 -4 -24, 12 4 24) color(153 217 255) = prop_breaker : "Collider scene res://scenes/props/breaker.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-6 -6 -6, 6 6 6) color(153 217 255) = item_health : "Collider scene res://scenes/props/pickup_health.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-6 -6 -6, 6 6 6) color(153 217 255) = item_cells : "Collider scene res://scenes/props/pickup_cells.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-16 -16 -28, 16 16 28) color(153 217 255) = monster_drifter : "Collider scene res://scenes/actors/drifter.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-12 -12 -10, 12 12 10) color(153 217 255) = monster_skitter : "Collider scene res://scenes/actors/skitter.tscn" 
+[
+	angle(float) : "" : "0.0"
+]
+
+@PointClass size(-16 -16 -32, 16 16 32) color(153 217 255) = trigger_exit : "Collider scene res://scenes/props/exit.tscn" 
+[
+	angle(float) : "" : "0.0"
+]

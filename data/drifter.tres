@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/actors/orb.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/fx/enemy_burst.tscn" id="3"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Drifter"
+max_health = 30.0
+move_speed = 3.2
+preferred_range = 8.0
+wake_range = 24.0
+hover_height = 1.3
+attack_interval = 2.4
+attack_windup = 0.4
+projectile = ExtResource("2")
+projectile_speed = 10.0
+projectile_damage = 10.0
+notice_delay = 1.0
+notice_time = 1.6
+hear_radius = 10.0
+lose_time = 8.0
+pain_chance = 0.6
+death_fx = ExtResource("3")

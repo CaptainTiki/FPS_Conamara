@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/one_shot_fx.gd" id="1"]
+[ext_resource type="Shader" path="res://art/shaders/glow.gdshader" id="2"]
+
+[sub_resource type="ShaderMaterial" id="mat"]
+shader = ExtResource("2")
+shader_parameter/color = Color(1, 0.6, 0.2, 1)
+shader_parameter/energy = 3.0
+
+[sub_resource type="BoxMesh" id="bit"]
+material = SubResource("mat")
+size = Vector3(0.14, 0.14, 0.14)
+
+[sub_resource type="Curve" id="shrink"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="SkitterBurst" type="Node3D"]
+script = ExtResource("1")
+lifetime = 1.4
+light_fade = 0.45
+
+[node name="Bits" type="CPUParticles3D" parent="."]
+cast_shadow = 0
+emitting = false
+amount = 32
+lifetime = 1.1
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+mesh = SubResource("bit")
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, -6.0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 9.0
+angular_velocity_min = -400.0
+angular_velocity_max = 400.0
+damping_min = 1.0
+damping_max = 3.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+scale_amount_curve = SubResource("shrink")
+
+[node name="Light" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.55, 0.2, 1)
+light_energy = 3.0
+omni_range = 7.0

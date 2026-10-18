@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3]
+
+[ext_resource type="Shader" path="res://kit/kit.gdshader" id="1_i2mu3"]
+[ext_resource type="Texture2D" path="res://art/textures/kit_albedo.png" id="2_tfasr"]
+[ext_resource type="Texture2D" path="res://art/textures/kit_emission.png" id="3_ulqfj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_i2mu3")
+shader_parameter/albedo_tex = ExtResource("2_tfasr")
+shader_parameter/emission_tex = ExtResource("3_ulqfj")
+shader_parameter/emission_energy = 2.0

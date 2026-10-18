@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/one_shot_fx.gd" id="1"]
+[ext_resource type="Shader" path="res://art/shaders/glow.gdshader" id="2"]
+
+[sub_resource type="ShaderMaterial" id="hot"]
+shader = ExtResource("2")
+shader_parameter/color = Color(1, 0.55, 0.15, 1)
+shader_parameter/energy = 4.0
+
+[sub_resource type="BoxMesh" id="bit"]
+material = SubResource("hot")
+size = Vector3(0.22, 0.22, 0.22)
+
+[sub_resource type="ShaderMaterial" id="smoke"]
+shader = ExtResource("2")
+shader_parameter/color = Color(0.25, 0.12, 0.08, 1)
+shader_parameter/energy = 1.0
+
+[sub_resource type="SphereMesh" id="puff"]
+material = SubResource("smoke")
+radius = 0.6
+height = 1.2
+radial_segments = 8
+rings = 4
+
+[sub_resource type="Curve" id="shrink"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="grow"]
+_data = [Vector2(0, 0.4), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Explosion" type="Node3D"]
+script = ExtResource("1")
+lifetime = 1.8
+light_fade = 0.6
+
+[node name="Bits" type="CPUParticles3D" parent="."]
+cast_shadow = 0
+emitting = false
+amount = 90
+lifetime = 1.2
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+mesh = SubResource("bit")
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, -9, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 14.0
+angular_velocity_min = -500.0
+angular_velocity_max = 500.0
+damping_min = 1.0
+damping_max = 4.0
+scale_amount_min = 0.5
+scale_amount_max = 1.6
+scale_amount_curve = SubResource("shrink")
+
+[node name="Smoke" type="CPUParticles3D" parent="."]
+cast_shadow = 0
+emitting = false
+amount = 14
+lifetime = 1.6
+one_shot = true
+explosiveness = 0.9
+mesh = SubResource("puff")
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 1.5, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.5
+damping_min = 1.0
+damping_max = 2.0
+scale_amount_min = 0.8
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("grow")
+
+[node name="Light" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.55, 0.2, 1)
+light_energy = 9.0
+omni_range = 13.0

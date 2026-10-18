@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_data.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/fx/skitter_burst.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Skitter"
+max_health = 12.0
+move_speed = 6.5
+preferred_range = 0.0
+wake_range = 20.0
+hover_height = 0.0
+attack_interval = 1.3
+attack_windup = 0.25
+projectile_speed = 0.0
+projectile_damage = 0.0
+notice_time = 1.0
+hear_radius = 7.0
+lose_time = 6.0
+pain_chance = 0.3
+death_fx = ExtResource("2")
+movement = "ground"
+attack = "melee"
+melee_range = 1.7
+melee_damage = 5.0
+lunge_speed = 7.0
+notice_delay = 0.9
+alert_radius = 9.0
+anim_fps = 4.0

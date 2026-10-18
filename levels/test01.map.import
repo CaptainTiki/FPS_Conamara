@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="QuakeMapFile"
+uid="uid://bg05jp6o4q3hh"
+path="res://.godot/imported/test01.map-222437b2ef091a657d7ed0ef5216702b.tres"
+
+[deps]
+
+source_file="res://levels/test01.map"
+dest_files=["res://.godot/imported/test01.map-222437b2ef091a657d7ed0ef5216702b.tres"]
+
+[params]
+

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/metalstrip_1.png" id="1_qmgkx"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/metalstrip_1_normal.png" id="2_ybgkc"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/metalstrip_1_roughness.png" id="3_l1r5r"]
+
+[resource]
+albedo_texture = ExtResource("1_qmgkx")
+metallic = 0.3
+metallic_specular = 0.45
+roughness_texture = ExtResource("3_l1r5r")
+emission_energy_multiplier = 2.5
+normal_enabled = true
+normal_texture = ExtResource("2_ybgkc")
+texture_filter = 2

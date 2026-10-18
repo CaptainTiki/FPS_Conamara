@@ -1,0 +1,217 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" format=3]
+
+[ext_resource type="Resource" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_hd7lt"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="2_qer84"]
+[ext_resource type="PackedScene" path="res://scenes/actors/player.tscn" id="3_y2msy"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="4_v3sv1"]
+[ext_resource type="PackedScene" path="res://scenes/props/door.tscn" id="5_qd16k"]
+[ext_resource type="PackedScene" path="res://scenes/props/crate.tscn" id="6_rue0k"]
+[ext_resource type="PackedScene" path="res://scenes/props/crate_stack.tscn" id="7_kmi8w"]
+[ext_resource type="PackedScene" path="res://scenes/props/explosive.tscn" id="8_jpwk0"]
+[ext_resource type="PackedScene" path="res://scenes/props/switch_console.tscn" id="9_osmgu"]
+[ext_resource type="PackedScene" path="res://scenes/props/breaker.tscn" id="10_l3bqk"]
+[ext_resource type="PackedScene" path="res://scenes/props/pickup_health.tscn" id="11_2huff"]
+[ext_resource type="PackedScene" path="res://scenes/props/pickup_cells.tscn" id="12_gv4aq"]
+[ext_resource type="PackedScene" path="res://scenes/actors/drifter.tscn" id="13_15fgy"]
+[ext_resource type="PackedScene" path="res://scenes/actors/skitter.tscn" id="14_oypma"]
+[ext_resource type="PackedScene" path="res://scenes/props/exit.tscn" id="15_q4dsk"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="16_j8ebd"]
+
+[sub_resource type="Resource" id="Resource_7jy1x"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("3_y2msy")
+classname = "info_player_start"
+description = "Player spawn. Faces 'angle'."
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -28, 16, 16, 28)
+})
+
+[sub_resource type="Resource" id="Resource_psx25"]
+script = ExtResource("4_v3sv1")
+classname = "light"
+description = "Omni light. light_color 'r g b', light_energy, omni_range (metres)."
+class_properties = Dictionary[String, Variant]({
+"light_color": Color(1, 0.9, 0.76, 1),
+"light_energy": 2.0,
+"omni_range": 8.0,
+"shadow_enabled": false
+})
+auto_apply_to_matching_node_properties = true
+meta_properties = Dictionary[String, Variant]({
+"color": Color(1, 0.85, 0.4, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+})
+node_class = "OmniLight3D"
+
+[sub_resource type="Resource" id="Resource_ee43w"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("5_qd16k")
+classname = "prop_door"
+description = "Door scene. 'angle' 0 = slab across X (corridor runs E-W), 90 = across Y."
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0,
+"lock": "none",
+"slab_width": 1.5,
+"texture": "tb/door"
+})
+auto_apply_to_matching_node_properties = true
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-24, -4, -52, 24, 4, 52)
+})
+
+[sub_resource type="Resource" id="Resource_ppt1s"]
+script = ExtResource("4_v3sv1")
+classname = "shot"
+description = "Screenshot marker for -- --capture (camera at origin, facing angle)."
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0,
+"shot_name": "shot"
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(1, 0.4, 0.4, 1),
+"size": AABB(-4, -4, -4, 4, 4, 4)
+})
+node_class = "Marker3D"
+name_property = "shot_name"
+node_groups = Array[String](["shots"])
+
+[sub_resource type="Resource" id="Resource_j1vuu"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("6_rue0k")
+classname = "prop_crate"
+description = "Collider scene res://scenes/props/crate.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -16, 16, 16, 16)
+})
+
+[sub_resource type="Resource" id="Resource_xbu37"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("7_kmi8w")
+classname = "prop_crate_stack"
+description = "Collider scene res://scenes/props/crate_stack.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -32, 16, 16, 32)
+})
+
+[sub_resource type="Resource" id="Resource_78gx0"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("8_jpwk0")
+classname = "prop_canister"
+description = "Collider scene res://scenes/props/explosive.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-8, -8, -16, 8, 8, 16)
+})
+
+[sub_resource type="Resource" id="Resource_blekq"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("9_osmgu")
+classname = "prop_console"
+description = "Collider scene res://scenes/props/switch_console.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-20, -12, -20, 20, 12, 20)
+})
+
+[sub_resource type="Resource" id="Resource_wug38"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("10_l3bqk")
+classname = "prop_breaker"
+description = "Collider scene res://scenes/props/breaker.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-12, -4, -24, 12, 4, 24)
+})
+
+[sub_resource type="Resource" id="Resource_lon5m"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("11_2huff")
+classname = "item_health"
+description = "Collider scene res://scenes/props/pickup_health.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-6, -6, -6, 6, 6, 6)
+})
+
+[sub_resource type="Resource" id="Resource_el58g"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("12_gv4aq")
+classname = "item_cells"
+description = "Collider scene res://scenes/props/pickup_cells.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-6, -6, -6, 6, 6, 6)
+})
+
+[sub_resource type="Resource" id="Resource_u4jwl"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("13_15fgy")
+classname = "monster_drifter"
+description = "Collider scene res://scenes/actors/drifter.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -28, 16, 16, 28)
+})
+
+[sub_resource type="Resource" id="Resource_rupgc"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("14_oypma")
+classname = "monster_skitter"
+description = "Collider scene res://scenes/actors/skitter.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-12, -12, -10, 12, 12, 10)
+})
+
+[sub_resource type="Resource" id="Resource_gejeq"]
+script = ExtResource("4_v3sv1")
+scene_file = ExtResource("15_q4dsk")
+classname = "trigger_exit"
+description = "Collider scene res://scenes/props/exit.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -32, 16, 16, 32)
+})
+
+[resource]
+script = ExtResource("16_j8ebd")
+fgd_name = "Conamara"
+base_fgd_files = Array[Resource]([ExtResource("1_hd7lt")])
+entity_definitions = Array[Resource]([SubResource("Resource_7jy1x"), SubResource("Resource_psx25"), SubResource("Resource_ee43w"), SubResource("Resource_ppt1s"), SubResource("Resource_j1vuu"), SubResource("Resource_xbu37"), SubResource("Resource_78gx0"), SubResource("Resource_blekq"), SubResource("Resource_wug38"), SubResource("Resource_lon5m"), SubResource("Resource_el58g"), SubResource("Resource_u4jwl"), SubResource("Resource_rupgc"), SubResource("Resource_gejeq")])

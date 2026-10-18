@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+metallic = 0.3
+metallic_specular = 0.45
+roughness = 1.0
+roughness_texture_channel = 0
+emission_enabled = false
+emission_energy_multiplier = 2.5
+normal_scale = 1.0
+texture_filter = 2

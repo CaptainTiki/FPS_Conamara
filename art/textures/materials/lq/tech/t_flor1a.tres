@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_flor1a.png" id="1_kso16"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_flor1a_normal.png" id="2_cfo8f"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_flor1a_roughness.png" id="3_srmxo"]
+
+[resource]
+albedo_texture = ExtResource("1_kso16")
+metallic = 0.3
+metallic_specular = 0.45
+roughness_texture = ExtResource("3_srmxo")
+emission_energy_multiplier = 2.5
+normal_enabled = true
+normal_texture = ExtResource("2_cfo8f")
+texture_filter = 2

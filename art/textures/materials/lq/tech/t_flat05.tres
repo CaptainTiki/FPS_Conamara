@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_flat05.png" id="1_geije"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_flat05_normal.png" id="2_vc2y2"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_flat05_roughness.png" id="3_n0ge3"]
+
+[resource]
+albedo_texture = ExtResource("1_geije")
+metallic = 0.3
+metallic_specular = 0.45
+roughness_texture = ExtResource("3_n0ge3")
+emission_energy_multiplier = 2.5
+normal_enabled = true
+normal_texture = ExtResource("2_vc2y2")
+texture_filter = 2

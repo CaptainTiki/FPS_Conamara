@@ -1,0 +1,229 @@
+[gd_resource type="Resource" script_class="FuncGodotMapSettings" format=3]
+
+[ext_resource type="Material" path="res://art/textures/tb/_template.tres" id="1_ecudg"]
+[ext_resource type="Resource" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="2_2hakq"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="3_plrjw"]
+[ext_resource type="PackedScene" path="res://scenes/actors/player.tscn" id="4_k1m37"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="5_8aqjk"]
+[ext_resource type="PackedScene" path="res://scenes/props/door.tscn" id="6_g58ij"]
+[ext_resource type="PackedScene" path="res://scenes/props/crate.tscn" id="7_hrk7r"]
+[ext_resource type="PackedScene" path="res://scenes/props/crate_stack.tscn" id="8_3t5l1"]
+[ext_resource type="PackedScene" path="res://scenes/props/explosive.tscn" id="9_eea5u"]
+[ext_resource type="PackedScene" path="res://scenes/props/switch_console.tscn" id="10_65pn6"]
+[ext_resource type="PackedScene" path="res://scenes/props/breaker.tscn" id="11_nal14"]
+[ext_resource type="PackedScene" path="res://scenes/props/pickup_health.tscn" id="12_7w3bs"]
+[ext_resource type="PackedScene" path="res://scenes/props/pickup_cells.tscn" id="13_lrjs7"]
+[ext_resource type="PackedScene" path="res://scenes/actors/drifter.tscn" id="14_j0r8m"]
+[ext_resource type="PackedScene" path="res://scenes/actors/skitter.tscn" id="15_rleon"]
+[ext_resource type="PackedScene" path="res://scenes/props/exit.tscn" id="16_jurc7"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="17_284bt"]
+[ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map_settings.gd" id="18_3441j"]
+[ext_resource type="Script" path="res://addons/func_godot/src/import/quake_wad_file.gd" id="19_58jhj"]
+
+[sub_resource type="Resource" id="Resource_7jy1x"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("4_k1m37")
+classname = "info_player_start"
+description = "Player spawn. Faces 'angle'."
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -28, 16, 16, 28)
+})
+
+[sub_resource type="Resource" id="Resource_psx25"]
+script = ExtResource("5_8aqjk")
+classname = "light"
+description = "Omni light. light_color 'r g b', light_energy, omni_range (metres)."
+class_properties = Dictionary[String, Variant]({
+"light_color": Color(1, 0.9, 0.76, 1),
+"light_energy": 2.0,
+"omni_range": 8.0,
+"shadow_enabled": false
+})
+auto_apply_to_matching_node_properties = true
+meta_properties = Dictionary[String, Variant]({
+"color": Color(1, 0.85, 0.4, 1),
+"size": AABB(-8, -8, -8, 8, 8, 8)
+})
+node_class = "OmniLight3D"
+
+[sub_resource type="Resource" id="Resource_ee43w"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("6_g58ij")
+classname = "prop_door"
+description = "Door scene. 'angle' 0 = slab across X (corridor runs E-W), 90 = across Y."
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0,
+"lock": "none",
+"slab_width": 1.5,
+"texture": "tb/door"
+})
+auto_apply_to_matching_node_properties = true
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-24, -4, -52, 24, 4, 52)
+})
+
+[sub_resource type="Resource" id="Resource_ppt1s"]
+script = ExtResource("5_8aqjk")
+classname = "shot"
+description = "Screenshot marker for -- --capture (camera at origin, facing angle)."
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0,
+"shot_name": "shot"
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(1, 0.4, 0.4, 1),
+"size": AABB(-4, -4, -4, 4, 4, 4)
+})
+node_class = "Marker3D"
+name_property = "shot_name"
+node_groups = Array[String](["shots"])
+
+[sub_resource type="Resource" id="Resource_j1vuu"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("7_hrk7r")
+classname = "prop_crate"
+description = "Collider scene res://scenes/props/crate.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -16, 16, 16, 16)
+})
+
+[sub_resource type="Resource" id="Resource_xbu37"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("8_3t5l1")
+classname = "prop_crate_stack"
+description = "Collider scene res://scenes/props/crate_stack.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -32, 16, 16, 32)
+})
+
+[sub_resource type="Resource" id="Resource_78gx0"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("9_eea5u")
+classname = "prop_canister"
+description = "Collider scene res://scenes/props/explosive.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-8, -8, -16, 8, 8, 16)
+})
+
+[sub_resource type="Resource" id="Resource_blekq"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("10_65pn6")
+classname = "prop_console"
+description = "Collider scene res://scenes/props/switch_console.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-20, -12, -20, 20, 12, 20)
+})
+
+[sub_resource type="Resource" id="Resource_wug38"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("11_nal14")
+classname = "prop_breaker"
+description = "Collider scene res://scenes/props/breaker.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-12, -4, -24, 12, 4, 24)
+})
+
+[sub_resource type="Resource" id="Resource_lon5m"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("12_7w3bs")
+classname = "item_health"
+description = "Collider scene res://scenes/props/pickup_health.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-6, -6, -6, 6, 6, 6)
+})
+
+[sub_resource type="Resource" id="Resource_el58g"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("13_lrjs7")
+classname = "item_cells"
+description = "Collider scene res://scenes/props/pickup_cells.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-6, -6, -6, 6, 6, 6)
+})
+
+[sub_resource type="Resource" id="Resource_u4jwl"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("14_j0r8m")
+classname = "monster_drifter"
+description = "Collider scene res://scenes/actors/drifter.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -28, 16, 16, 28)
+})
+
+[sub_resource type="Resource" id="Resource_rupgc"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("15_rleon")
+classname = "monster_skitter"
+description = "Collider scene res://scenes/actors/skitter.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-12, -12, -10, 12, 12, 10)
+})
+
+[sub_resource type="Resource" id="Resource_gejeq"]
+script = ExtResource("5_8aqjk")
+scene_file = ExtResource("16_jurc7")
+classname = "trigger_exit"
+description = "Collider scene res://scenes/props/exit.tscn"
+class_properties = Dictionary[String, Variant]({
+"angle": 0.0
+})
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.6, 0.85, 1, 1),
+"size": AABB(-16, -16, -32, 16, 16, 32)
+})
+
+[sub_resource type="Resource" id="Resource_wlohq"]
+script = ExtResource("17_284bt")
+fgd_name = "Conamara"
+base_fgd_files = Array[Resource]([ExtResource("2_2hakq")])
+entity_definitions = Array[Resource]([SubResource("Resource_7jy1x"), SubResource("Resource_psx25"), SubResource("Resource_ee43w"), SubResource("Resource_ppt1s"), SubResource("Resource_j1vuu"), SubResource("Resource_xbu37"), SubResource("Resource_78gx0"), SubResource("Resource_blekq"), SubResource("Resource_wug38"), SubResource("Resource_lon5m"), SubResource("Resource_el58g"), SubResource("Resource_u4jwl"), SubResource("Resource_rupgc"), SubResource("Resource_gejeq")])
+
+[resource]
+script = ExtResource("18_3441j")
+entity_fgd = SubResource("Resource_wlohq")
+use_groups_hierarchy = true
+base_texture_dir = "res://art/textures"
+base_material_dir = "res://art/textures/materials"
+default_material = ExtResource("1_ecudg")
+albedo_map_pattern = "%s"

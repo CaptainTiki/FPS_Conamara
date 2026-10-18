@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_trim1c.png" id="1_2voxm"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_trim1c_normal.png" id="2_m53y0"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_trim1c_roughness.png" id="3_ofscb"]
+
+[resource]
+albedo_texture = ExtResource("1_2voxm")
+metallic = 0.3
+metallic_specular = 0.45
+roughness_texture = ExtResource("3_ofscb")
+emission_energy_multiplier = 2.5
+normal_enabled = true
+normal_texture = ExtResource("2_m53y0")
+texture_filter = 2

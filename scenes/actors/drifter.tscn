@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1"]
+[ext_resource type="Resource" path="res://data/drifter.tres" id="2"]
+[ext_resource type="Shader" path="res://art/shaders/sprite_billboard.gdshader" id="3"]
+[ext_resource type="Texture2D" path="res://art/sprites/drifter_albedo.png" id="4"]
+[ext_resource type="Texture2D" path="res://art/sprites/drifter_emission.png" id="5"]
+
+[sub_resource type="CapsuleShape3D" id="shape"]
+radius = 0.55
+height = 1.7
+
+[sub_resource type="ShaderMaterial" id="mat"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo_tex = ExtResource("4")
+shader_parameter/emission_tex = ExtResource("5")
+shader_parameter/frame = 0
+shader_parameter/frames = 8
+shader_parameter/flash = 0.0
+shader_parameter/emission_energy = 2.5
+
+[sub_resource type="QuadMesh" id="quad"]
+size = Vector2(2.6, 2.6)
+
+[node name="Drifter" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 5
+motion_mode = 1
+script = ExtResource("1")
+data = ExtResource("2")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("shape")
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+cast_shadow = 0
+mesh = SubResource("quad")
+surface_material_override/0 = SubResource("mat")
+
+[node name="Eye" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Glow" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+light_color = Color(1, 0.3, 0.75, 1)
+light_energy = 0.5
+omni_range = 3.0
