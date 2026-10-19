@@ -260,6 +260,27 @@ def build(level):
         xe = x1 * CELL - (16 if at((x1, y - 1)) and (x1, y - 1) not in corners else 0)
         wall_run(xs, Y(y), xe, Y(y) + 16, fz, cz, (x0, y - 1))
 
+    # --- diagonal risers: a low cell with higher floor on two adjacent sides (a step in a pit's
+    #     or a sunken area's outline) gets a prism filling its half on the high side, so the
+    #     riser runs at 45 degrees like the walls do
+    for (x, y), c in cells.items():
+        if c["t"] in (STAIRS, LIFT): continue
+        f = floor_u(c)
+        def hi(dx, dy):
+            o = at((x + dx, y + dy)); return o is not None and o["t"] not in (STAIRS,) and floor_u(o) > f
+        e, w, s_, n = hi(1, 0), hi(-1, 0), hi(0, 1), hi(0, -1)
+        if (e == w) or (s_ == n): continue
+        ew, ns = (1 if e else -1), (1 if s_ else -1)
+        if not hi(ew, ns): continue                      # diagonal must be high too (a real step, not a notch)
+        oe, os_ = at((x + ew, y)), at((x, y + ns))
+        h = min(floor_u(oe), floor_u(os_))
+        X0, X1, Z0, Z1 = x * CELL, (x + 1) * CELL, Y(y + 1), Y(y)
+        if (ew, ns) == (1, 1):    poly = [(X1, Z1), (X1, Z0), (X0, Z0)]
+        if (ew, ns) == (1, -1):   poly = [(X1, Z0), (X1, Z1), (X0, Z1)]
+        if (ew, ns) == (-1, 1):   poly = [(X0, Z1), (X0, Z0), (X1, Z0)]
+        if (ew, ns) == (-1, -1):  poly = [(X0, Z0), (X0, Z1), (X1, Z1)]
+        layers["floor"].append(prism(poly, f, h, "kick", floor_tex(oe)))
+
     # --- border grate strips along walls and risers (12u wide, 2u tall on the floor)
     for (x, y), c in cells.items():
         if c["t"] in (PIT, CATWALK, STAIRS): continue
