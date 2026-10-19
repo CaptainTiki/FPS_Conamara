@@ -47,6 +47,11 @@ func _init() -> void:
 	defs.append(_point("prop_door", "Door scene. 'angle' 0 = slab across X (corridor runs E-W), 90 = across Y.",
 		"res://scenes/props/door.tscn", "", {"angle": 0.0, "lock": "none", "slab_width": 1.5, "texture": "tb/door"}, [], true, Vector3(48, 8, 104)))
 
+	# ladder -> scenes/props/ladder.tscn; height = metres to the landing. Wall on the ladder's -Z:
+	# angle 0 wall west, 180 east, 90 south, 270 north (quake axes).
+	defs.append(_point("prop_ladder", "Ladder. 'height' metres to the landing; the wall is on the ladder's back.",
+		"res://scenes/props/ladder.tscn", "", {"angle": 0.0, "height": 4.0}, [], true, Vector3(40, 24, 128)))
+
 	# screenshot marker: a Marker3D in group 'shots', named from shot_name
 	var shot := _point("shot", "Screenshot marker for -- --capture (camera at origin, facing angle).", "", "Marker3D",
 		{"angle": 0.0, "shot_name": "shot"}, ["shots"], false, Vector3(8, 8, 8))

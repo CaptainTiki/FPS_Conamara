@@ -144,29 +144,45 @@ class Gen:
                 seen.add(p); ordered.append(p)
         ordered.sort(key=lambda p: abs(p[0] - ax) + abs(p[1] - ay))
 
-        width = rng.choice([1, 2, 2])
-        new = []
-        for (x, y) in ordered:
+        # corridors are always 2 wide: 1-wide corridors made 1-wide doors and ribs with nowhere
+        # to stand (pins 1, 9). The rng draw stays so older seeds keep their layouts.
+        width = rng.choice([2, 2, 2])
+        new = []            # (cell, path index) - each cell belongs to the first path point that stamps it
+        for pi, (x, y) in enumerate(ordered):
             for (nx, ny) in [(x + i, y + j) for i in range(width) for j in range(width)]:
-                if 0 <= nx < self.w and 0 <= ny < self.h and self.type[ny][nx] == VOID:
-                    new.append((nx, ny))
+                if 0 <= nx < self.w and 0 <= ny < self.h and self.type[ny][nx] == VOID and all(c != (nx, ny) for c, _ in new):
+                    new.append(((nx, ny), pi))
         if not new:
             return
-        # height ramp along corridor
-        n = len(new)
+        # height ramp along the corridor, by *path position* so a whole cross-section shares one
+        # level (per-cell ramps left one column a level above its neighbour: the cliff in pin 7).
+        n = len(ordered)
         steps = fl_b - fl_a
-        for i, (x, y) in enumerate(new):
-            t = i / max(1, n - 1)
-            lvl = round(fl_a + steps * t)
+        i0 = min(pi for _, pi in new); i1 = max(pi for _, pi in new)      # the carved span of the path
+        span = max(1, i1 - i0)
+        lvl_at = [round(fl_a + steps * min(1.0, max(0.0, (i - i0) / span))) for i in range(n)]
+        # a level change never sits on the first/last two carved path points (room mouths, where
+        # doors go) or on a corner, where the 2x2 stamps overlap diagonally
+        corner = set()
+        for i in range(1, n - 1):
+            a, b, c = ordered[i - 1], ordered[i], ordered[i + 1]
+            if (b[0] - a[0], b[1] - a[1]) != (c[0] - b[0], c[1] - b[1]): corner.update((i - 1, i, i + 1))
+        bad = lambda i: i in corner or i < i0 + 2 or i > i1 - 2
+        for i in range(1, n):
+            if lvl_at[i] != lvl_at[i - 1] and bad(i):
+                j = i
+                while j < i1 - 2 and bad(j): j += 1
+                if j != i and not bad(j):
+                    d = lvl_at[i] - lvl_at[i - 1]
+                    for k in range(i, j): lvl_at[k] -= d
+        for (x, y), pi in new:
             self.type[y][x] = FLOOR
-            self.floor[y][x] = lvl
-            self.ceil[y][x] = lvl + 3
-        # mark stair cells where level changes
-        prev = None
-        for (x, y) in new:
-            if prev is not None and self.floor[y][x] != prev:
+            self.floor[y][x] = lvl_at[pi]
+            self.ceil[y][x] = lvl_at[pi] + 3
+        # stairs: every cell of a cross-section whose level differs from the previous section's
+        for (x, y), pi in new:
+            if pi > 0 and lvl_at[pi] != lvl_at[pi - 1]:
                 self.type[y][x] = STAIRS
-            prev = self.floor[y][x]
 
     def connect(self):
         rng = self.rng
@@ -195,48 +211,91 @@ class Gen:
         for i, j in edges:
             a, b = rooms[i], rooms[j]
             self.carve_corridor(a["center"], b["center"], a["floor"], b["floor"])
+        self.heal_cliffs()
         self.place_doors()
 
+    def heal_cliffs(self):
+        """Where two corridors carved at different levels meet, the later one kept the earlier
+        one's cells, leaving a bare drop between flat cells (pin 7). The higher cell of every
+        such edge becomes a stair (the exporter builds its steps up from the lower neighbour)."""
+        room_cells = set()
+        for r in self.rooms: room_cells.update(r["cells"])
+        for y in range(self.h):
+            for x in range(self.w):
+                if self.type[y][x] != FLOOR or (x, y) in room_cells: continue
+                for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    nx, ny = x + dx, y + dy
+                    if not (0 <= nx < self.w and 0 <= ny < self.h): continue
+                    if self.type[ny][nx] == FLOOR and self.floor[ny][nx] < self.floor[y][x]:
+                        self.type[y][x] = STAIRS; break
+                    # a corridor grazing a room 2+ levels above it (no wall between): the corridor
+                    # cell becomes a stair up to the room level. 1-level grazes become half-step
+                    # ledges in the exporter.
+                    if (nx, ny) in room_cells and self.type[ny][nx] == FLOOR and self.floor[ny][nx] - self.floor[y][x] >= 2:
+                        self.floor[y][x] = self.floor[ny][nx]; self.ceil[y][x] = max(self.ceil[y][x], self.floor[y][x] + 3)
+                        self.type[y][x] = STAIRS; break
+
     def place_doors(self):
-        """A door is the whole corridor cross-section where a corridor meets a room:
-        every corridor cell with a room neighbour becomes DOOR, grouped into runs
-        across the corridor; each run is one door (locked by chance)."""
+        """A door sits in the corridor just inside a room mouth, on a *clean* cross-section:
+        exactly 2 cells wide, straight across the corridor, wall on both ends, corridor
+        continuing on both sides. Walking back from the mouth (up to 3 cells) finds that
+        section; where none exists (a 2-cell link between rooms, a mouth on a diagonal room
+        edge, a junction) the mouth stays open. One door per mouth, never two within 2 cells
+        of each other, so no offset pairs, no back-to-back doors, no 3-door junctions
+        (pins 1, 3, 5). Never 1 wide."""
         rng = self.rng
         room_cells = set()
         for r in self.rooms:
             room_cells.update(r["cells"])
-        cand = set()
-        for y in range(self.h):
-            for x in range(self.w):
-                if self.type[y][x] not in (FLOOR, STAIRS) or (x, y) in room_cells: continue
+        W, H = self.w, self.h
+        def inb(x, y): return 0 <= x < W and 0 <= y < H
+        def corr(x, y): return inb(x, y) and self.type[y][x] in (FLOOR, STAIRS) and (x, y) not in room_cells
+        def flat(x, y): return corr(x, y) and self.type[y][x] == FLOOR
+        def void(x, y): return not inb(x, y) or self.type[y][x] == VOID
+        # mouths: corridor cells touching a room floor cell, keyed by the direction into the room
+        mouths = {}
+        for y in range(H):
+            for x in range(W):
+                if not corr(x, y): continue
                 for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
                     nx, ny = x + dx, y + dy
                     if (nx, ny) in room_cells and self.type[ny][nx] == FLOOR:
-                        # the corridor must continue away from the room on the other side
-                        bx, by = x - dx, y - dy
-                        if 0 <= bx < self.w and 0 <= by < self.h and self.type[by][bx] != VOID and (bx, by) not in room_cells:
-                            cand.add((x, y, dx, dy))
-        # group by (axis, line) into runs of adjacent cells
-        seen = set()
+                        mouths.setdefault((dx, dy), set()).add((x, y))
+        taken = set()          # door cells placed so far
         self.doors = []
-        for (x, y, dx, dy) in sorted(cand):
-            if (x, y) in seen: continue
-            run = [(x, y)]
-            if dx:   # corridor runs E-W, door spans N-S cells
+        def near_door(cs):
+            return any(abs(cx - tx) + abs(cy - ty) <= 2 for cx, cy in cs for tx, ty in taken)
+        for (dx, dy), cs in sorted(mouths.items()):
+            px, py = dy, dx                     # across the corridor
+            done = set()
+            for (mx, my) in sorted(cs):
+                if (mx, my) in done: continue
+                # the mouth run across the corridor
+                run = [(mx, my)]
                 for s_ in (1, -1):
                     k = 1
-                    while (x, y + s_ * k, dx, dy) in cand: run.append((x, y + s_ * k)); k += 1
-            else:
-                for s_ in (1, -1):
-                    k = 1
-                    while (x + s_ * k, y, dx, dy) in cand: run.append((x + s_ * k, y)); k += 1
-            if len(run) > 2: continue           # too wide for a door: leave it an open mouth
-            locked = rng.random() < 0.15
-            for (cx, cy) in run:
-                seen.add((cx, cy))
-                self.type[cy][cx] = LOCKED if locked else DOOR
-            run.sort()
-            self.doors.append(dict(cells=run, axis="x" if dx else "y", locked=locked))
+                    while (mx + s_ * px * k, my + s_ * py * k) in cs: run.append((mx + s_ * px * k, my + s_ * py * k)); k += 1
+                done.update(run)
+                placed = None
+                for back in range(1, 4):        # walk into the corridor, away from the room
+                    sec = sorted((x - dx * back, y - dy * back) for x, y in run)
+                    # grow the section across the corridor to its full width
+                    lo, hi = sec[0], sec[-1]
+                    while flat(lo[0] - px, lo[1] - py): lo = (lo[0] - px, lo[1] - py)
+                    while flat(hi[0] + px, hi[1] + py): hi = (hi[0] + px, hi[1] + py)
+                    sec = [(lo[0] + px * i, lo[1] + py * i) for i in range(abs(hi[0] - lo[0]) + abs(hi[1] - lo[1]) + 1)]
+                    if len(sec) != 2 or not all(flat(x, y) for x, y in sec): continue
+                    if not (void(lo[0] - px, lo[1] - py) and void(hi[0] + px, hi[1] + py)): continue   # walls both ends
+                    if not all(corr(x - dx, y - dy) and corr(x + dx, y + dy) for x, y in sec): continue   # corridor through
+                    if any((x + dx, y + dy) in room_cells or (x - dx, y - dy) in room_cells for x, y in sec): continue
+                    if near_door(sec): break
+                    placed = sec; break
+                if not placed: continue
+                locked = rng.random() < 0.15
+                for (cx, cy) in placed:
+                    self.type[cy][cx] = LOCKED if locked else DOOR
+                    taken.add((cx, cy))
+                self.doors.append(dict(cells=placed, axis="x" if dx else "y", locked=locked))
 
     # ---------- output ----------
     def render_automap(self, scale=10):

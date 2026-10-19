@@ -39,16 +39,23 @@ THEMES = {
         "kick": "tb/kick", "chamfer": "tb/chamfer", "ceiling": "tb/ceiling", "beam": "tb/beam",
         "lamp": "tb/light_strip", "trim": "tb/trim", "rod": "tb/trim", "door_frame": "tb/trim", "door": "tb/door",
         "rib": "tb/trim", "pipe": "tb/trim", "pilaster": "tb/trim", "vent": "tb/wall_vent", "boxes": ["tb/console", "tb/wall_vent"],
-        "panels": [("tb/wall", .72), ("tb/wall_vent", 1.0)],
+        "post": "tb/trim", "lamp_warm": "tb/light_strip", "lamp_cool": "tb/light_strip",
+        "panels": [("tb/wall", .72), ("tb/wall_vent", 1.0)], "depth": {"tb/wall_vent": 8},
     },
     "quake": {
         "floor": "lq/tech/t_flor2a", "floor_metal": "lq/tech/t_flor1a", "floor_grate": "lq/tech/tek_grate", "pit": "lq/tech/tek_grate",
         "kick": "lq/tech/t_trim2a", "chamfer": "lq/tech/t_trim1c", "ceiling": "lq/tech/t_flat05", "beam": "lq/tech/t_trim1d",
         "lamp": "lq/tech/tlight11_fbr", "trim": "lq/tech/metalstrip_1", "rod": "lq/tech/tek_pipe2", "door_frame": "lq/tech/t_trim2d", "door": "lq/tech/tek_door1",
-        "rib": "lq/tech/t_trim2d", "pipe": "lq/tech/tek_pipe2", "pilaster": "lq/tech/t_trim1c", "vent": "lq/tech/t_blok06h",
+        "rib": "lq/tech/tek_trm1", "pipe": "lq/tech/tek_pipe2", "pilaster": "lq/tech/t_trim1c", "vent": "lq/tech/t_blok06h",
+        "post": "lq/tech/t_trim2d", "lamp_warm": "lq/tech/t_lit01_fbr", "lamp_cool": "lq/tech/t_lit04_fbr",
         "boxes": ["lq/tech/comp1_1", "lq/tech/comp1_2", "lq/tech/comp1_5", "lq/tech/comp1_8", "lq/tech/t_blok05", "lq/tech/t_blok04h"],
         "panels": [("lq/tech/t_wall1a", .30), ("lq/tech/t_wall3a", .50), ("lq/tech/t_blok03", .65),
                    ("lq/tech/t_blok09", .78), ("lq/tech/t_wall1b", .88), ("lq/tech/comp1_2", .94), ("lq/tech/t_blok06", 1.0)],
+        # texture -> how far the panel field sits back from the wall plane (quake units; negative = proud).
+        # A texture that *draws* corrugation or slots is set into the wall so the depth is real (pin 4);
+        # plain plating stays flush. Adjacent runs with different textures always differ in depth (pin 8).
+        "depth": {"lq/tech/t_wall1a": 0, "lq/tech/t_wall3a": 6, "lq/tech/t_blok03": 0, "lq/tech/t_blok09": 10,
+                  "lq/tech/t_wall1b": -4, "lq/tech/comp1_2": 10, "lq/tech/t_blok06": 6},
     },
 }
 THEME = THEMES["quake"]
@@ -57,6 +64,7 @@ def panel_tex(t):
     for name, upto in THEME["panels"]:
         if t < upto: return name
     return THEME["panels"][-1][0]
+def panel_depth(tex): return THEME.get("depth", {}).get(tex, 0)
 
 # ---------------------------------------------------------------- brushes ----
 def box(x0, y0, z0, x1, y1, z1, top, side=None, bottom=None):
@@ -271,13 +279,42 @@ def build(level):
         layers["skirting"].append(prism(poly, base, fz + 16, "kick", "kick"))
         layers["panel"].append(prism(poly, fz + 16, cz - 16, panel, panel))
         layers["cornice"].append(prism(poly, cz - 16, top, "chamfer", "chamfer"))
-    def wall_run(x0, y0, x1, y1, floor_z, ceil_z, key):
-        """x0..x1 / y0..y1 in quake units (thin box). Splits into skirting / panel / cornice."""
+    last_on_line = {}      # wall line key -> (texture, depth) of the previous run, for the depth rule
+    def wall_run(x0, y0, x1, y1, floor_z, ceil_z, key, line=None):
+        """x0..x1 / y0..y1 in quake units (thin box, 16 thick). Splits into skirting / panel /
+        cornice. The panel field is set into the wall by its texture's depth (or proud of it);
+        a full-depth post at each end frames the field and seals the corner. Along one wall
+        line, a run whose texture differs from the previous run's always gets a different depth
+        (pin 8: texture change = geometry change)."""
         t = hash01(*key)
-        panel = panel_tex(t)
+        panel = panel_tex(t); depth = panel_depth(panel)
+        prev = last_on_line.get(line)
+        if prev and prev[0] != panel and prev[1] == depth:
+            depth = depth + 6 if depth <= 0 else depth - 6 if depth >= 10 else depth + 6
+        if line is not None: last_on_line[line] = (panel, depth)
         layers["skirting"].append(box(x0, y0, base, x1, y1, floor_z + 16, "kick"))
-        layers["panel"].append(box(x0, y0, floor_z + 16, x1, y1, ceil_z - 16, panel))
         layers["cornice"].append(box(x0, y0, ceil_z - 16, x1, y1, top, "chamfer"))
+        z0, z1 = floor_z + 16, ceil_z - 16
+        thin = (x1 - x0) == 16           # wall is thin in x (runs N-S) or thin in y (runs E-W)
+        P = 8                            # post width along the wall
+        if depth == 0:
+            layers["panel"].append(box(x0, y0, z0, x1, y1, z1, panel)); return
+        if thin:
+            # key[0] is the void column. E wall: it starts at x0 (room west). W wall: it is 3
+            # cells west of x0 (room east). The field's room-facing face moves back by depth.
+            room_east = key[0] * CELL < x0
+            fx0, fx1 = (x0, x1 - depth) if room_east else (x0 + depth, x1)
+            layers["panel"].append(box(fx0, y0 + P, z0, fx1, y1 - P, z1, panel))
+            layers["panel"].append(box(x0, y0, z0, x1, y0 + P, z1, "post"))
+            layers["panel"].append(box(x0, y1 - P, z0, x1, y1, z1, "post"))
+        else:
+            # key[1] is the void row r. S wall: box is [Y(r)-16, Y(r)], room north (higher y).
+            # N wall: box is [Y(r+1), Y(r+1)+16], room south.
+            room_north = y1 == Y(key[1])
+            fy0, fy1 = (y0, y1 - depth) if room_north else (y0 + depth, y1)
+            layers["panel"].append(box(x0 + P, fy0, z0, x1 - P, fy1, z1, panel))
+            layers["panel"].append(box(x0, y0, z0, x0 + P, y1, z1, "post"))
+            layers["panel"].append(box(x1 - P, y0, z0, x1, y1, z1, "post"))
     def edge_runs(segs, vertical):
         # runs of cells sharing floor and ceiling so the bands line up; max 3 cells so panels vary
         out = []
@@ -296,17 +333,17 @@ def build(level):
         if cur: runs.append(cur)
         return runs
     for x, y0, y1, fz, cz in edge_runs(E, True):
-        wall_run((x + 1) * CELL, Y(y1), (x + 1) * CELL + 16, Y(y0), fz, cz, (x + 1, y0))
+        wall_run((x + 1) * CELL, Y(y1), (x + 1) * CELL + 16, Y(y0), fz, cz, (x + 1, y0), ("E", x))
     for x, y0, y1, fz, cz in edge_runs(W_, True):
-        wall_run(x * CELL - 16, Y(y1), x * CELL, Y(y0), fz, cz, (x - 1, y0))
+        wall_run(x * CELL - 16, Y(y1), x * CELL, Y(y0), fz, cz, (x - 1, y0), ("W", x))
     for y, x0, x1, fz, cz in edge_runs(S, False):      # void row is y+1
         xs = x0 * CELL + (16 if at((x0 - 1, y + 1)) and (x0 - 1, y + 1) not in corners else 0)
         xe = x1 * CELL - (16 if at((x1, y + 1)) and (x1, y + 1) not in corners else 0)
-        wall_run(xs, Y(y + 1) - 16, xe, Y(y + 1), fz, cz, (x0, y + 1))
+        wall_run(xs, Y(y + 1) - 16, xe, Y(y + 1), fz, cz, (x0, y + 1), ("S", y))
     for y, x0, x1, fz, cz in edge_runs(N, False):      # void row is y-1
         xs = x0 * CELL + (16 if at((x0 - 1, y - 1)) and (x0 - 1, y - 1) not in corners else 0)
         xe = x1 * CELL - (16 if at((x1, y - 1)) and (x1, y - 1) not in corners else 0)
-        wall_run(xs, Y(y), xe, Y(y) + 16, fz, cz, (x0, y - 1))
+        wall_run(xs, Y(y), xe, Y(y) + 16, fz, cz, (x0, y - 1), ("N", y))
 
     # --- diagonal risers: a low cell with higher floor on two adjacent sides (a step in a pit's
     #     or a sunken area's outline) gets a prism filling its half on the high side, so the
@@ -328,6 +365,38 @@ def build(level):
         if (ew, ns) == (-1, 1):   poly = [(X0, Z1), (X0, Z0), (X1, Z0)]
         if (ew, ns) == (-1, -1):  poly = [(X0, Z0), (X0, Z1), (X1, Z1)]
         layers["floor"].append(prism(poly, f, h, "kick", floor_tex(oe)))
+        if h - f == LVL:      # one-level step: add the half-height band toward the low corner (pin 10)
+            lx, lz = X0 + X1 - poly[1][0], Z0 + Z1 - poly[1][1]
+            def toward(p):
+                return (p[0] + (34 if lx > p[0] else -34 if lx < p[0] else 0), p[1] + (34 if lz > p[1] else -34 if lz < p[1] else 0))
+            band = [toward(poly[0]), poly[0], poly[1], poly[2], toward(poly[2])]
+            layers["stairs"].append(prism(band, f, f + 16, "kick", floor_tex(oe)))
+
+    # --- 1-level drops (sunken areas, corridors grazing a room one level up) are stepped: a
+    #     half-height ledge 24u out from the riser, plus an invisible clip ramp so the player
+    #     walks up it like the stairs (pin 10: "half as far down per step").
+    def one_up(c, o): return o is not None and o["t"] not in (STAIRS, LIFT) and floor_u(o) - floor_u(c) == LVL
+    ledged = set()
+    for (x, y), c in cells.items():
+        if c["t"] in (STAIRS, LIFT, CATWALK): continue
+        fz = floor_u(c); X0, X1, Z0, Z1 = x * CELL, (x + 1) * CELL, Y(y + 1), Y(y)
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            o = at((x + dx, y + dy))
+            if not one_up(c, o): continue
+            ledged.add((x, y, dx, dy))
+            tread = floor_tex(o)
+            if dx == 1:
+                layers["stairs"].append(box(X1 - 24, Z0, fz, X1, Z1, fz + 16, tread, "kick"))
+                layers["stairs"].append(wedge("x", (X1 - 56, Z0, Z1), (X1, Z0, Z1), fz, fz + LVL))
+            if dx == -1:
+                layers["stairs"].append(box(X0, Z0, fz, X0 + 24, Z1, fz + 16, tread, "kick"))
+                layers["stairs"].append(wedge("x", (X0 + 56, Z0, Z1), (X0, Z0, Z1), fz, fz + LVL))
+            if dy == 1:     # higher cell to the south (lower quake y)
+                layers["stairs"].append(box(X0, Z0, fz, X1, Z0 + 24, fz + 16, tread, "kick"))
+                layers["stairs"].append(wedge("y", (Z0 + 56, X0, X1), (Z0, X0, X1), fz, fz + LVL))
+            if dy == -1:
+                layers["stairs"].append(box(X0, Z1 - 24, fz, X1, Z1, fz + 16, tread, "kick"))
+                layers["stairs"].append(wedge("y", (Z1 - 56, X0, X1), (Z1, X0, X1), fz, fz + LVL))
 
     # --- border grate strips along walls and risers (12u wide, 2u tall on the floor)
     for (x, y), c in cells.items():
@@ -337,17 +406,45 @@ def build(level):
             o = at((x + dx, y + dy))
             if o and floor_u(o) <= fz: continue
             if (x, y) in corners and not o: continue
+            if (x, y, dx, dy) in ledged: continue
             if dx == 1: layers["border"].append(box(X + CELL - 12, Z0, fz, X + CELL, Z1, fz + 2, "floor_grate"))
             if dx == -1: layers["border"].append(box(X, Z0, fz, X + 12, Z1, fz + 2, "floor_grate"))
             if dy == 1: layers["border"].append(box(X, Z0, fz, X + CELL, Z0 + 12, fz + 2, "floor_grate"))
             if dy == -1: layers["border"].append(box(X, Z1 - 12, fz, X + CELL, Z1, fz + 2, "floor_grate"))
+
+    # --- every sunken region deeper than one level gets a way out: a ladder against a riser
+    #     (pin 12). One ladder per region, two if it is big. prop_ladder: `height` = the climb.
+    seen_pit = set()
+    for p0, c0 in sorted(cells.items()):
+        if c0["t"] != PIT or p0 in seen_pit: continue
+        region = []; stack = [p0]; seen_pit.add(p0)
+        while stack:
+            p = stack.pop(); region.append(p)
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                q = (p[0] + dx, p[1] + dy)
+                if q in cells and cells[q]["t"] == PIT and q not in seen_pit and floor_u(cells[q]) == floor_u(c0):
+                    seen_pit.add(q); stack.append(q)
+        cand = []
+        for p in region:
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                o = at((p[0] + dx, p[1] + dy))
+                if o and o["t"] == FLOOR and floor_u(o) - floor_u(c0) >= 2 * LVL:
+                    cand.append((hash01(p[0] * 3 + dx, p[1] * 5 + dy), p, dx, dy, floor_u(o) - floor_u(c0)))
+        if not cand: continue
+        cand.sort()
+        for _, p, dx, dy, drop in cand[: (2 if len(region) > 40 else 1)]:
+            cx = (p[0] + .5) * CELL + dx * (CELL / 2 - 14); cz = Y(p[1] + .5) - dy * (CELL / 2 - 14)
+            angle = {(-1, 0): 0, (1, 0): 180, (0, 1): 90, (0, -1): 270}[(dx, dy)]
+            ents.append(f'"classname" "prop_ladder"\n"origin" "{cx:g} {cz:g} {floor_u(c0):g}"\n"angle" "{angle}"\n"height" "{drop / U:g}"')
 
     # --- depth pass. Everything here is decoration a hand edit can delete by layer.
     def corridor(p): return p in cells and p not in room_of and cells[p]["t"] in (FLOOR, DOOR, LOCKED, STAIRS)
     def wall_sides(x, y):
         """void neighbours of a room cell: list of (dx, dy)."""
         return [(dx, dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)) if (x + dx, y + dy) not in cells]
-    # corridor ribs: every 4th cell across an E-W or N-S run, posts on both walls + lintel
+    # corridor ribs: every 4th cell across an E-W or N-S run, posts on both walls + lintel.
+    # Only where the corridor is at least 2 wide: in a 1-wide hall the posts eat the walkway (pin 9).
+    # Rib texture is the dark riveted trim so it reads against the panels (pin 6); posts 20 deep.
     for (x, y), c in cells.items():
         if not corridor((x, y)) or c["t"] != FLOOR: continue
         fz, cz = floor_u(c), ceil_of(c)
@@ -355,19 +452,25 @@ def build(level):
         if ew and not ns and x % 4 == 0 and not corridor((x, y - 1)):
             k = 0
             while corridor((x, y + k + 1)): k += 1
-            Z0, Z1 = Y(y + k + 1), Y(y); X0 = x * CELL + 24
-            layers["rib"].append(box(X0, Z0, cz - 20, X0 + 16, Z1, cz, "rib"))
-            layers["rib"].append(box(X0, Z1 - 16, fz, X0 + 16, Z1, cz, "rib"))
-            layers["rib"].append(box(X0, Z0, fz, X0 + 16, Z0 + 16, cz, "rib"))
+            if k < 1: continue
+            Z0, Z1 = Y(y + k + 1), Y(y); X0 = x * CELL + 22
+            layers["rib"].append(box(X0, Z0, cz - 24, X0 + 20, Z1, cz, "rib"))
+            layers["rib"].append(box(X0, Z1 - 20, fz, X0 + 20, Z1, cz, "rib"))
+            layers["rib"].append(box(X0, Z0, fz, X0 + 20, Z0 + 20, cz, "rib"))
         if ns and not ew and y % 4 == 0 and not corridor((x - 1, y)):
             k = 0
             while corridor((x + k + 1, y)): k += 1
-            X0, X1 = x * CELL, (x + k + 1) * CELL; Z0 = Y(y + 1) + 24
-            layers["rib"].append(box(X0, Z0, cz - 20, X1, Z0 + 16, cz, "rib"))
-            layers["rib"].append(box(X0, Z0, fz, X0 + 16, Z0 + 16, cz, "rib"))
-            layers["rib"].append(box(X1 - 16, Z0, fz, X1, Z0 + 16, cz, "rib"))
-    # overhead pipe pairs along corridor runs, hugging one wall
+            if k < 1: continue
+            X0, X1 = x * CELL, (x + k + 1) * CELL; Z0 = Y(y + 1) + 22
+            layers["rib"].append(box(X0, Z0, cz - 24, X1, Z0 + 20, cz, "rib"))
+            layers["rib"].append(box(X0, Z0, fz, X0 + 20, Z0 + 20, cz, "rib"))
+            layers["rib"].append(box(X1 - 20, Z0, fz, X1, Z0 + 20, cz, "rib"))
+    # overhead pipe pairs along corridor runs, hugging one wall. A run never ends in mid-air
+    # (pin 11): where the corridor ends in a wall the pipe carries on into it; where the wall
+    # ends (a junction or a room mouth) the pipe elbows up into the ceiling.
     done = set()
+    def pipe_elbow(px, pz, cz):
+        layers["pipe"].append(prism(octagon(px, pz, 6), cz - 30, cz + 4, "pipe", "pipe"))
     for (x, y), c in cells.items():
         if not corridor((x, y)) or (x, y) in done: continue
         if corridor((x + 1, y)) and not corridor((x, y - 1)):          # E-W run with a north wall
@@ -379,8 +482,14 @@ def build(level):
             if x1 - x0 < 2: continue
             cz = min(ceil_of(cells[(xx, y)]) for xx in range(x0, x1 + 1))
             zw = Y(y)                                                      # wall plane (north)
+            a0, a1 = x0 * CELL, (x1 + 1) * CELL
+            wall_w, wall_e = (x0 - 1, y) not in cells, (x1 + 1, y) not in cells
+            a0 = a0 - 8 if wall_w else a0 + 14
+            a1 = a1 + 8 if wall_e else a1 - 14
             for off in (14, 30):
-                layers["pipe"].append(extrude("x", x0 * CELL + 8, (x1 + 1) * CELL - 8, octagon(zw - off, cz - 22, 6), "pipe"))
+                layers["pipe"].append(extrude("x", a0, a1, octagon(zw - off, cz - 22, 6), "pipe"))
+                if not wall_w: pipe_elbow(a0, zw - off, cz)
+                if not wall_e: pipe_elbow(a1, zw - off, cz)
         elif corridor((x, y + 1)) and not corridor((x - 1, y)):         # N-S run with a west wall
             y0 = y
             while corridor((x, y0 - 1)) and not corridor((x - 1, y0 - 1)): y0 -= 1
@@ -390,8 +499,14 @@ def build(level):
             if y1 - y0 < 2: continue
             cz = min(ceil_of(cells[(x, yy)]) for yy in range(y0, y1 + 1))
             xw = x * CELL
+            b0, b1 = Y(y1 + 1), Y(y0)                                      # quake y: south end, north end
+            wall_s, wall_n = (x, y1 + 1) not in cells, (x, y0 - 1) not in cells
+            b0 = b0 - 8 if wall_s else b0 + 14
+            b1 = b1 + 8 if wall_n else b1 - 14
             for off in (14, 30):
-                layers["pipe"].append(extrude("y", Y(y1 + 1) + 8, Y(y0) - 8, octagon(xw + off, cz - 22, 6), "pipe"))
+                layers["pipe"].append(extrude("y", b0, b1, octagon(xw + off, cz - 22, 6), "pipe"))
+                if not wall_s: pipe_elbow(xw + off, b0, cz)
+                if not wall_n: pipe_elbow(xw + off, b1, cz)
     # room walls: pilasters every 4 cells, vertical pipes, wall boxes, vents, crates
     for (x, y), c in cells.items():
         if (x, y) not in room_of or c["t"] != FLOOR or (x, y) in corners: continue
@@ -468,33 +583,45 @@ def build(level):
         if dy == -1:   lo, hi = ((Z1 + run, X, X + CELL), (Z0 + run, X, X + CELL)); axis = "y"
         layers["stairs"].append(wedge(axis, lo, hi, f0, f1))
 
-    # --- lights + lamp fixtures. Small rooms: one ceiling light. Big rooms: a 4-cell grid of
-    #     pendants hung down to 4.5 m above the floor so the light reaches the deck.
-    def light(cx, cz, z, energy, rng_, color="255 230 194", ceiling=None):
+    # --- lights + lamp fixtures. Rooms up to 40 cells: one ceiling light. Bigger: a 4-cell grid
+    #     of pendants hung down to 4.5 m above the floor so the light reaches the deck. The grid
+    #     counts sunken cells too (a room that is mostly pit was getting almost no lights: pin 2).
+    #     Lamp faces use the fully-lit tiles, so every fixture glows whatever crop of the texture
+    #     lands on it (pin 13: the old tile only glowed along one strip).
+    def light(cx, cz, z, energy, rng_, color="255 230 194", ceiling=None, lamp="lamp_warm"):
         ents.append(f'"classname" "light"\n"origin" "{cx:g} {cz:g} {z:g}"\n"light_color" "{color}"\n"light_energy" "{energy}"\n"omni_range" "{rng_}"')
-        layers["lamp"].append(box(cx - 16, cz - 16, z + 12, cx + 16, cz + 16, z + 16, "lamp", "trim"))
+        layers["lamp"].append(box(cx - 16, cz - 16, z + 12, cx + 16, cz + 16, z + 16, lamp, "trim"))
         if ceiling is not None and ceiling > z + 16:
             layers["lamp"].append(box(cx - 2, cz - 2, z + 16, cx + 2, cz + 2, ceiling, "rod"))   # pendant rod
     for r in level["rooms"]:
         cs = [tuple(p) for p in r["cells"] if tuple(p) in cells]
         cz = ceil_u(r["floor"], r["ceil"]); fz = r["floor"] * LVL
         hang = min(cz - 20, fz + int(4.5 * U))
-        if len(cs) <= 80:
+        if len(cs) <= 40:
             cx = sum(p[0] for p in cs) / len(cs) + .5; cy = sum(p[1] for p in cs) / len(cs) + .5
             light(cx * CELL, Y(cy), hang, 5.0, 14, "255 230 194", cz)
         else:
             for p in cs:
-                if p[0] % 4 == 2 and p[1] % 4 == 2 and cells[p]["t"] != PIT:
+                if p[0] % 4 == 2 and p[1] % 4 == 2:
                     light((p[0] + .5) * CELL, Y(p[1] + .5), hang, 4.5, 12, "255 230 194", cz)
     for (x, y), c in cells.items():          # pits: dim cyan light low down so the drop reads
         if c["t"] == PIT and x % 3 == 0 and y % 3 == 0:
             ents.append(f'"classname" "light"\n"origin" "{(x + .5) * CELL:g} {Y(y + .5):g} {floor_u(c) + 24:g}"\n"light_color" "90 200 255"\n"light_energy" "2.5"\n"omni_range" "7"')
     def corridor(p): return p in cells and p not in room_of and cells[p]["t"] in (FLOOR, DOOR, LOCKED, STAIRS)
+    # corridor lights: every 4th cell along a run (stairs included - a ramped corridor was getting
+    # none), then a coverage pass so no corridor cell is more than 3 cells from a light.
+    clights = set()
     for (x, y), c in cells.items():
-        if not corridor((x, y)) or c["t"] != FLOOR: continue
+        if not corridor((x, y)) or c["t"] in (DOOR, LOCKED): continue
         ew = corridor((x + 1, y)) or corridor((x - 1, y)); ns = corridor((x, y + 1)) or corridor((x, y - 1))
         hit = (ew and x % 4 == 0 and not corridor((x, y - 1))) or (ns and not ew and y % 4 == 0 and not corridor((x - 1, y)))
-        if hit: light((x + .5) * CELL, Y(y + .5), ceil_of(c) - 20, 3.0, 9, "140 230 255")
+        if hit: clights.add((x, y))
+    for (x, y) in sorted(p for p in cells if corridor(p) and cells[p]["t"] not in (DOOR, LOCKED)):
+        if not any(abs(x - lx) + abs(y - ly) <= 3 for lx, ly in clights): clights.add((x, y))
+    for (x, y) in sorted(clights):
+        c = cells[(x, y)]; cz = ceil_of(c)
+        hang = min(cz - 20, floor_u(c) + int(3.2 * U))       # corridor ceilings are 5 m up: hang the lamp
+        light((x + .5) * CELL, Y(y + .5), hang, 4.0, 10, "140 230 255", cz, lamp="lamp_cool")
 
     # --- doors: one frame + one Door scene per run of door cells, spanning the corridor width.
     #     Opening = run width - 2 posts; the Door scene gets slab_width to match.
@@ -589,8 +716,9 @@ def build(level):
         while corridor((x + k + 1, y)): k += 1
         if best is None or k > best[0]: best = (k, x, y)
     if best and best[0] >= 3:
-        k, x, y = best; c = cells[(x, y)]
-        ents.append(f'"classname" "shot"\n"origin" "{(x + .5) * CELL:g} {Y(y + .5):g} {floor_u(c) + int(1.6 * U):g}"\n"angle" "0"\n"shot_name" "corridor"')
+        k, x, y = best; c = cells[(x + 1, y)]
+        cy = y + 1 if corridor((x, y + 1)) else y + .5          # centred on a 2-wide corridor
+        ents.append(f'"classname" "shot"\n"origin" "{(x + 1.5) * CELL:g} {Y(cy):g} {floor_u(c) + int(1.6 * U):g}"\n"angle" "0"\n"shot_name" "corridor"')
     for i in (1, 2, 5, 8):
         if i < len(level["rooms"]): shot(level["rooms"][i]["name"], level["rooms"][i])
     return layers, ents

@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_lit01_fbr.png" id="1_a7rw4"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_lit01_fbr_emission.png" id="2_ryaen"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_lit01_fbr_normal.png" id="3_fktlp"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_lit01_fbr_roughness.png" id="4_341y6"]
+
+[resource]
+albedo_texture = ExtResource("1_a7rw4")
+metallic = 0.3
+metallic_specular = 0.45
+roughness_texture = ExtResource("4_341y6")
+emission_enabled = true
+emission_energy_multiplier = 2.5
+emission_texture = ExtResource("2_ryaen")
+normal_enabled = true
+normal_texture = ExtResource("3_fktlp")
+texture_filter = 2

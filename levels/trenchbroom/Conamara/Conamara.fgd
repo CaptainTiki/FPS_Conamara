@@ -56,6 +56,12 @@
 	texture(string) : "" : "tb/door"
 ]
 
+@PointClass size(-20 -12 -64, 20 12 64) color(153 217 255) = prop_ladder : "Ladder. 'height' metres to the landing; the wall is on the ladder's back." 
+[
+	angle(float) : "" : "0.0"
+	height(float) : "" : "4.0"
+]
+
 @PointClass size(-4 -4 -4, 4 4 4) color(255 102 102) = shot : "Screenshot marker for -- --capture (camera at origin, facing angle)." 
 [
 	angle(float) : "" : "0.0"

@@ -141,6 +141,9 @@ func _cell() -> Vector2i:
 	var p := get_tree().get_first_node_in_group("player") as Node3D
 	if not p:
 		return Vector2i(-1, -1)
+	var lv := get_parent()
+	if lv.get("rows") != null:
+		map_rows = int(lv.get("rows"))      # the level's own grid height (read late: parent readies after us)
 	var col := int(floor(p.global_position.z / CELL_M))
 	var row := map_rows - 1 - int(floor(p.global_position.x / CELL_M))
 	return Vector2i(col, row)

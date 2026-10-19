@@ -19,6 +19,27 @@ state), never by sending the player back through an earlier level.
 - Props, enemies, pickups and the exit are point entities placed in TrenchBroom (the exporter
   seeds a first pass).
 
+## Kit rules (from test01 playtest pins, 2026-10-19)
+
+- **Corridors are 2 wide. Doors are 2 wide.** Never a 1-wide door, never two offset doors, never
+  doors back to back or three doors round one junction. A door sits one to three cells inside a
+  room mouth on a clean cross-section (straight, wall both ends, corridor both sides); where no
+  clean section exists the mouth stays open.
+- **Texture change = geometry change.** A panel texture that draws corrugation or slots is set
+  into the wall (6-10 u) with a post at each end; plain plating is flush; along one wall two
+  adjacent runs with different textures always differ in depth.
+- **Ribs only where there is room for them** (2-wide corridors) and in a texture that contrasts
+  with the panels (dark riveted trim).
+- **Nothing ends in mid-air.** A pipe run ends inside the wall or elbows up into the ceiling.
+- **Every drop is traversable.** A 1 m step is two half-steps (ledge + clip ramp). A 2 m+ pit has
+  a ladder out. A corridor never ends on a cliff: level changes are whole cross-sections and
+  never sit on a corner or at a mouth.
+- **Every cell is lit.** Rooms over 40 cells get a 4-cell pendant grid (sunken cells count);
+  corridors get a hanging lamp every 4 cells, stairs included, never more than 3 cells from one.
+  Lamp faces use fully-lit tiles so every fixture glows.
+- **Shot markers** (`shot` entities) are camera positions for `-- --capture`; add them anywhere
+  worth reviewing.
+
 ## Themes (texture sets, see `tools/export_map.py` THEMES)
 
 | Theme | Set | Used by |
