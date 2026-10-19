@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Conamara"
-run/main_scene="res://levels/wing01.tscn"
+run/main_scene="res://levels/test01.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [display]
@@ -107,9 +107,8 @@ jump={
 
 [rendering]
 
-rendering_device/driver.windows="d3d12"
-
 textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/default_filters/use_nearest_mipmap_filter=true

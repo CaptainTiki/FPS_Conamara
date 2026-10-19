@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="FuncGodotMapSettings" format=3]
+[gd_resource type="Resource" script_class="FuncGodotMapSettings" format=3 uid="uid://cnr84l0vtvrrt"]
 
 [ext_resource type="Material" path="res://art/textures/tb/_template.tres" id="1_2hakq"]
-[ext_resource type="Resource" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="2_plrjw"]
-[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="3_k1m37"]
+[ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="2_plrjw"]
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="3_k1m37"]
 [ext_resource type="PackedScene" path="res://scenes/actors/player.tscn" id="4_8aqjk"]
-[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="5_g58ij"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="5_g58ij"]
 [ext_resource type="PackedScene" path="res://scenes/props/door.tscn" id="6_hrk7r"]
 [ext_resource type="PackedScene" path="res://scenes/props/ladder.tscn" id="7_3t5l1"]
 [ext_resource type="PackedScene" path="res://scenes/props/crate.tscn" id="8_eea5u"]
@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" path="res://scenes/actors/drifter.tscn" id="15_jurc7"]
 [ext_resource type="PackedScene" path="res://scenes/actors/skitter.tscn" id="16_284bt"]
 [ext_resource type="PackedScene" path="res://scenes/props/exit.tscn" id="17_3441j"]
-[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="18_58jhj"]
-[ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map_settings.gd" id="19_wlohq"]
-[ext_resource type="Script" path="res://addons/func_godot/src/import/quake_wad_file.gd" id="20_6kuhu"]
+[ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="18_58jhj"]
+[ext_resource type="Script" uid="uid://38q6k0ctahjn" path="res://addons/func_godot/src/map/func_godot_map_settings.gd" id="19_wlohq"]
+[ext_resource type="Script" uid="uid://cij36hpqc46c" path="res://addons/func_godot/src/import/quake_wad_file.gd" id="20_6kuhu"]
 
 [sub_resource type="Resource" id="Resource_ee43w"]
 script = ExtResource("5_g58ij")

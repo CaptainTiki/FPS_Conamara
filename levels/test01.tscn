@@ -1,9 +1,9 @@
-[gd_scene format=4]
+[gd_scene format=4 uid="uid://dexsdwxq10gfu"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_05m21"]
+[ext_resource type="Script" uid="uid://lqudg6stt7bk" path="res://scripts/level.gd" id="1_05m21"]
 [ext_resource type="Environment" path="res://art/env/level.tres" id="2_if84w"]
-[ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="3_irn3u"]
-[ext_resource type="Resource" path="res://levels/map_settings.tres" id="4_awqyx"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="3_irn3u"]
+[ext_resource type="Resource" uid="uid://cnr84l0vtvrrt" path="res://levels/map_settings.tres" id="4_awqyx"]
 [ext_resource type="Material" path="res://art/textures/materials/lq/tech/t_flor2a.tres" id="5_yl6xy"]
 [ext_resource type="Material" path="res://art/textures/materials/lq/tech/t_trim2a.tres" id="6_cx8ec"]
 [ext_resource type="Material" path="res://art/textures/materials/lq/tech/t_flor1a.tres" id="7_pioc6"]
@@ -31,43 +31,28 @@
 [ext_resource type="Material" path="res://art/textures/materials/lq/tech/comp1_1.tres" id="29_hwsng"]
 [ext_resource type="Material" path="res://art/textures/materials/lq/tech/t_blok04h.tres" id="30_pmr3g"]
 [ext_resource type="PackedScene" path="res://scenes/props/ladder.tscn" id="31_q3po2"]
-[ext_resource type="Script" path="res://scripts/ladder.gd" id="32_gm6gy"]
 [ext_resource type="ArrayMesh" path="res://kit/ladder.res" id="33_fkapd"]
 [ext_resource type="PackedScene" path="res://scenes/props/crate_stack.tscn" id="34_pbkwo"]
 [ext_resource type="ArrayMesh" path="res://kit/crate_stack.res" id="35_gb2la"]
 [ext_resource type="PackedScene" path="res://scenes/props/crate.tscn" id="36_y1qxf"]
 [ext_resource type="ArrayMesh" path="res://kit/crate.res" id="37_11qe6"]
 [ext_resource type="PackedScene" path="res://scenes/props/door.tscn" id="38_4pimj"]
-[ext_resource type="Script" path="res://scripts/door.gd" id="39_q545v"]
-[ext_resource type="Shader" path="res://art/shaders/glow.gdshader" id="40_6yulw"]
+[ext_resource type="Shader" uid="uid://cxcdtvii13f5m" path="res://art/shaders/glow.gdshader" id="40_6yulw"]
 [ext_resource type="PackedScene" path="res://scenes/actors/player.tscn" id="41_0dqtw"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="42_gh313"]
-[ext_resource type="Script" path="res://scripts/player_input.gd" id="43_iotdl"]
-[ext_resource type="Script" path="res://scripts/weapon.gd" id="44_4kpd4"]
-[ext_resource type="Resource" path="res://data/scattergun.tres" id="45_aa5u7"]
-[ext_resource type="Script" path="res://scripts/weapon_data.gd" id="46_ek68q"]
-[ext_resource type="Resource" path="res://data/pistol.tres" id="47_uf6uu"]
-[ext_resource type="PackedScene" path="res://scenes/fx/impact_spark.tscn" id="48_5f7qs"]
-[ext_resource type="PackedScene" path="res://scenes/fx/tracer.tscn" id="49_bgjf7"]
+[ext_resource type="Script" uid="uid://vdgehuauicwi" path="res://scripts/player_input.gd" id="43_iotdl"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="50_oosol"]
-[ext_resource type="Script" path="res://scripts/hud.gd" id="51_k8uuq"]
 [ext_resource type="PackedScene" path="res://scenes/actors/skitter.tscn" id="52_ga2xw"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="53_tsrg8"]
-[ext_resource type="Resource" path="res://data/skitter.tres" id="54_mhs14"]
-[ext_resource type="Shader" path="res://art/shaders/sprite_billboard.gdshader" id="55_1xtcc"]
-[ext_resource type="Texture2D" path="res://art/sprites/skitter_albedo.png" id="56_djric"]
-[ext_resource type="Texture2D" path="res://art/sprites/skitter_emission.png" id="57_kuteu"]
+[ext_resource type="Shader" uid="uid://b4pxro6es6tjx" path="res://art/shaders/sprite_billboard.gdshader" id="55_1xtcc"]
+[ext_resource type="Texture2D" uid="uid://bxy4lxics8ll8" path="res://art/sprites/skitter_albedo.png" id="56_djric"]
+[ext_resource type="Texture2D" uid="uid://db08c2inuj58u" path="res://art/sprites/skitter_emission.png" id="57_kuteu"]
 [ext_resource type="PackedScene" path="res://scenes/actors/drifter.tscn" id="58_k7ftw"]
-[ext_resource type="Resource" path="res://data/drifter.tres" id="59_2454k"]
-[ext_resource type="Texture2D" path="res://art/sprites/drifter_albedo.png" id="60_62tjl"]
-[ext_resource type="Texture2D" path="res://art/sprites/drifter_emission.png" id="61_7f76l"]
+[ext_resource type="Texture2D" uid="uid://dr6gs0i0x1ggt" path="res://art/sprites/drifter_albedo.png" id="60_62tjl"]
+[ext_resource type="Texture2D" uid="uid://j5cvvbv761ff" path="res://art/sprites/drifter_emission.png" id="61_7f76l"]
 [ext_resource type="PackedScene" path="res://scenes/props/pickup_cells.tscn" id="62_pgtk4"]
-[ext_resource type="Script" path="res://scripts/pickup.gd" id="63_lscjb"]
 [ext_resource type="ArrayMesh" path="res://kit/pickup_cells.res" id="64_6757v"]
 [ext_resource type="PackedScene" path="res://scenes/props/pickup_health.tscn" id="65_oj810"]
 [ext_resource type="ArrayMesh" path="res://kit/pickup_health.res" id="66_62um6"]
 [ext_resource type="PackedScene" path="res://scenes/props/exit.tscn" id="67_7onws"]
-[ext_resource type="Script" path="res://scripts/exit_trigger.gd" id="68_7so25"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_12h6l"]
 _surfaces = [{
@@ -28126,9 +28111,6 @@ data = PackedVector3Array(-1, -5.625, -0.40625, -0.40625, -5.625, -1, 0.40625, -
 [sub_resource type="BoxShape3D" id="area"]
 size = Vector3(1.2, 4.4, 1.3)
 
-[sub_resource type="BoxShape3D" id="stop"]
-size = Vector3(2, 4, 0.8)
-
 [sub_resource type="BoxShape3D" id="low"]
 size = Vector3(1.5, 1.5, 1.5)
 
@@ -28359,40 +28341,6 @@ size = Vector3(0.8, 0.05, 0.3)
 resource_local_to_scene = true
 radius = 0.4
 height = 1.8
-
-[sub_resource type="ShaderMaterial" id="flash_mat"]
-render_priority = 0
-shader = ExtResource("40_6yulw")
-shader_parameter/color = Color(0.55, 0.97, 1, 1)
-shader_parameter/energy = 3.0
-
-[sub_resource type="SphereMesh" id="flash"]
-material = SubResource("flash_mat")
-radius = 0.075
-height = 0.15
-radial_segments = 8
-rings = 4
-
-[sub_resource type="LabelSettings" id="small"]
-font_color = Color(0.45, 0.9, 1, 1)
-outline_size = 5
-outline_color = Color(0, 0, 0, 0.85)
-
-[sub_resource type="LabelSettings" id="big"]
-font_size = 44
-outline_size = 8
-outline_color = Color(0, 0, 0, 0.85)
-
-[sub_resource type="LabelSettings" id="toast"]
-font_size = 22
-outline_size = 6
-outline_color = Color(0, 0, 0, 0.85)
-
-[sub_resource type="LabelSettings" id="banner"]
-font_size = 40
-font_color = Color(0.6, 1, 1, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 0.9)
 
 [sub_resource type="CapsuleShape3D" id="shape"]
 radius = 0.45
@@ -40112,225 +40060,209 @@ mesh = SubResource("ArrayMesh_qq8yk")
 [node name="entity_1110_collision_shape" type="CollisionShape3D" parent="Map/layer_15_pillar/entity_1110_func_detail" unique_id=2121948517]
 shape = SubResource("ConcavePolygonShape3D_fdcja")
 
-[node name="entity_1111_prop_ladder" type="Area3D" parent="Map" unique_id=902116791 instance=ExtResource("31_q3po2")]
+[node name="entity_1111_prop_ladder" parent="Map" unique_id=902116791 instance=ExtResource("31_q3po2")]
 transform = Transform3D(1.3907092e-07, 0, 1, 0, 1, 0, -1, 0, 1.3907092e-07, 57.5625, 0, 49)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("32_gm6gy")
 height = 2.0
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1111_prop_ladder" unique_id=2119120880]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1111_prop_ladder" unique_id=2119120880]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
 mesh = ExtResource("33_fkapd")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1111_prop_ladder" unique_id=1328576568]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1111_prop_ladder" unique_id=1328576568]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0.55)
 shape = SubResource("area")
 
-[node name="Backstop" type="StaticBody3D" parent="Map/entity_1111_prop_ladder" unique_id=2146040579]
+[node name="Backstop2" type="StaticBody3D" parent="Map/entity_1111_prop_ladder" unique_id=2146040579]
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1111_prop_ladder/Backstop" unique_id=1319596122]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.35)
-shape = SubResource("stop")
-
-[node name="entity_1112_prop_ladder" type="Area3D" parent="Map" unique_id=6386762 instance=ExtResource("31_q3po2")]
+[node name="entity_1112_prop_ladder" parent="Map" unique_id=6386762 instance=ExtResource("31_q3po2")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 47, 0, 59.5625)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("32_gm6gy")
 height = 2.0
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1112_prop_ladder" unique_id=1479668469]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1112_prop_ladder" unique_id=1479668469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.15)
 mesh = ExtResource("33_fkapd")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1112_prop_ladder" unique_id=1629484303]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1112_prop_ladder" unique_id=1629484303]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0.55)
 shape = SubResource("area")
 
-[node name="Backstop" type="StaticBody3D" parent="Map/entity_1112_prop_ladder" unique_id=324838021]
+[node name="Backstop2" type="StaticBody3D" parent="Map/entity_1112_prop_ladder" unique_id=324838021]
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1112_prop_ladder/Backstop" unique_id=759436245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.35)
-shape = SubResource("stop")
-
-[node name="entity_1113_prop_crate_stack" type="StaticBody3D" parent="Map" unique_id=999650727 instance=ExtResource("34_pbkwo")]
+[node name="entity_1113_prop_crate_stack" parent="Map" unique_id=999650727 instance=ExtResource("34_pbkwo")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 106.5625, 4.0625, 103)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1113_prop_crate_stack" unique_id=1577692399]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1113_prop_crate_stack" unique_id=1577692399]
 mesh = ExtResource("35_gb2la")
 
-[node name="Low" type="CollisionShape3D" parent="Map/entity_1113_prop_crate_stack" unique_id=1727515749]
+[node name="Low2" type="CollisionShape3D" parent="Map/entity_1113_prop_crate_stack" unique_id=1727515749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("low")
 
-[node name="High" type="CollisionShape3D" parent="Map/entity_1113_prop_crate_stack" unique_id=1617441658]
+[node name="High2" type="CollisionShape3D" parent="Map/entity_1113_prop_crate_stack" unique_id=1617441658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("high")
 
-[node name="entity_1114_prop_crate" type="StaticBody3D" parent="Map" unique_id=347822400 instance=ExtResource("36_y1qxf")]
+[node name="entity_1114_prop_crate" parent="Map" unique_id=347822400 instance=ExtResource("36_y1qxf")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 92.5625, 1.0625, 51)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1114_prop_crate" unique_id=876433587]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1114_prop_crate" unique_id=876433587]
 mesh = ExtResource("37_11qe6")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1114_prop_crate" unique_id=1003122355]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1114_prop_crate" unique_id=1003122355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("box")
 
-[node name="entity_1115_prop_crate_stack" type="StaticBody3D" parent="Map" unique_id=862542417 instance=ExtResource("34_pbkwo")]
+[node name="entity_1115_prop_crate_stack" parent="Map" unique_id=862542417 instance=ExtResource("34_pbkwo")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 92.5625, 1.0625, 53)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1115_prop_crate_stack" unique_id=23025970]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1115_prop_crate_stack" unique_id=23025970]
 mesh = ExtResource("35_gb2la")
 
-[node name="Low" type="CollisionShape3D" parent="Map/entity_1115_prop_crate_stack" unique_id=402834817]
+[node name="Low2" type="CollisionShape3D" parent="Map/entity_1115_prop_crate_stack" unique_id=402834817]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("low")
 
-[node name="High" type="CollisionShape3D" parent="Map/entity_1115_prop_crate_stack" unique_id=1816889772]
+[node name="High2" type="CollisionShape3D" parent="Map/entity_1115_prop_crate_stack" unique_id=1816889772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("high")
 
-[node name="entity_1116_prop_crate_stack" type="StaticBody3D" parent="Map" unique_id=1691131999 instance=ExtResource("34_pbkwo")]
+[node name="entity_1116_prop_crate_stack" parent="Map" unique_id=1691131999 instance=ExtResource("34_pbkwo")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 89, 2.0625, 80.5625)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1116_prop_crate_stack" unique_id=1213610315]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1116_prop_crate_stack" unique_id=1213610315]
 mesh = ExtResource("35_gb2la")
 
-[node name="Low" type="CollisionShape3D" parent="Map/entity_1116_prop_crate_stack" unique_id=502359500]
+[node name="Low2" type="CollisionShape3D" parent="Map/entity_1116_prop_crate_stack" unique_id=502359500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("low")
 
-[node name="High" type="CollisionShape3D" parent="Map/entity_1116_prop_crate_stack" unique_id=886031897]
+[node name="High2" type="CollisionShape3D" parent="Map/entity_1116_prop_crate_stack" unique_id=886031897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("high")
 
-[node name="entity_1117_prop_crate_stack" type="StaticBody3D" parent="Map" unique_id=2134548549 instance=ExtResource("34_pbkwo")]
+[node name="entity_1117_prop_crate_stack" parent="Map" unique_id=2134548549 instance=ExtResource("34_pbkwo")]
 transform = Transform3D(1.3907092e-07, 0, 1, 0, 1, 0, -1, 0, 1.3907092e-07, 88.5625, 0.0625, 101)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1117_prop_crate_stack" unique_id=12941806]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1117_prop_crate_stack" unique_id=12941806]
 mesh = ExtResource("35_gb2la")
 
-[node name="Low" type="CollisionShape3D" parent="Map/entity_1117_prop_crate_stack" unique_id=1755621424]
+[node name="Low2" type="CollisionShape3D" parent="Map/entity_1117_prop_crate_stack" unique_id=1755621424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("low")
 
-[node name="High" type="CollisionShape3D" parent="Map/entity_1117_prop_crate_stack" unique_id=569185986]
+[node name="High2" type="CollisionShape3D" parent="Map/entity_1117_prop_crate_stack" unique_id=569185986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("high")
 
-[node name="entity_1118_prop_crate" type="StaticBody3D" parent="Map" unique_id=2006359514 instance=ExtResource("36_y1qxf")]
+[node name="entity_1118_prop_crate" parent="Map" unique_id=2006359514 instance=ExtResource("36_y1qxf")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 83, 0.0625, 102.5625)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1118_prop_crate" unique_id=801163767]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1118_prop_crate" unique_id=801163767]
 mesh = ExtResource("37_11qe6")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1118_prop_crate" unique_id=179432640]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1118_prop_crate" unique_id=179432640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("box")
 
-[node name="entity_1119_prop_crate" type="StaticBody3D" parent="Map" unique_id=1660123000 instance=ExtResource("36_y1qxf")]
+[node name="entity_1119_prop_crate" parent="Map" unique_id=1660123000 instance=ExtResource("36_y1qxf")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 75, 0.0625, 81.4375)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1119_prop_crate" unique_id=1572234352]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1119_prop_crate" unique_id=1572234352]
 mesh = ExtResource("37_11qe6")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1119_prop_crate" unique_id=1260868529]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1119_prop_crate" unique_id=1260868529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("box")
 
-[node name="entity_1120_prop_crate" type="StaticBody3D" parent="Map" unique_id=2039843985 instance=ExtResource("36_y1qxf")]
+[node name="entity_1120_prop_crate" parent="Map" unique_id=2039843985 instance=ExtResource("36_y1qxf")]
 transform = Transform3D(1.3907092e-07, 0, 1, 0, 1, 0, -1, 0, 1.3907092e-07, 75, 0.0625, 102.5625)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1120_prop_crate" unique_id=1670731610]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1120_prop_crate" unique_id=1670731610]
 mesh = ExtResource("37_11qe6")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1120_prop_crate" unique_id=13403393]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1120_prop_crate" unique_id=13403393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("box")
 
-[node name="entity_1121_prop_crate_stack" type="StaticBody3D" parent="Map" unique_id=1304697000 instance=ExtResource("34_pbkwo")]
+[node name="entity_1121_prop_crate_stack" parent="Map" unique_id=1304697000 instance=ExtResource("34_pbkwo")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 61.4375, 0.0625, 99)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1121_prop_crate_stack" unique_id=830526769]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1121_prop_crate_stack" unique_id=830526769]
 mesh = ExtResource("35_gb2la")
 
-[node name="Low" type="CollisionShape3D" parent="Map/entity_1121_prop_crate_stack" unique_id=1172099346]
+[node name="Low2" type="CollisionShape3D" parent="Map/entity_1121_prop_crate_stack" unique_id=1172099346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("low")
 
-[node name="High" type="CollisionShape3D" parent="Map/entity_1121_prop_crate_stack" unique_id=1412891498]
+[node name="High2" type="CollisionShape3D" parent="Map/entity_1121_prop_crate_stack" unique_id=1412891498]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("high")
 
-[node name="entity_1122_prop_crate" type="StaticBody3D" parent="Map" unique_id=895957933 instance=ExtResource("36_y1qxf")]
+[node name="entity_1122_prop_crate" parent="Map" unique_id=895957933 instance=ExtResource("36_y1qxf")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 61.4375, 0.0625, 101)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1122_prop_crate" unique_id=34564185]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1122_prop_crate" unique_id=34564185]
 mesh = ExtResource("37_11qe6")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1122_prop_crate" unique_id=188965455]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1122_prop_crate" unique_id=188965455]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("box")
 
-[node name="entity_1123_prop_crate" type="StaticBody3D" parent="Map" unique_id=1014698997 instance=ExtResource("36_y1qxf")]
+[node name="entity_1123_prop_crate" parent="Map" unique_id=1014698997 instance=ExtResource("36_y1qxf")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 35, 2.0625, 40.5625)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1123_prop_crate" unique_id=298411328]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1123_prop_crate" unique_id=298411328]
 mesh = ExtResource("37_11qe6")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1123_prop_crate" unique_id=750310221]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1123_prop_crate" unique_id=750310221]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("box")
 
-[node name="entity_1124_prop_crate_stack" type="StaticBody3D" parent="Map" unique_id=150607914 instance=ExtResource("34_pbkwo")]
+[node name="entity_1124_prop_crate_stack" parent="Map" unique_id=150607914 instance=ExtResource("34_pbkwo")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 22.5625, 4.0625, 27)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1124_prop_crate_stack" unique_id=1457698188]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1124_prop_crate_stack" unique_id=1457698188]
 mesh = ExtResource("35_gb2la")
 
-[node name="Low" type="CollisionShape3D" parent="Map/entity_1124_prop_crate_stack" unique_id=1818888668]
+[node name="Low2" type="CollisionShape3D" parent="Map/entity_1124_prop_crate_stack" unique_id=1818888668]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("low")
 
-[node name="High" type="CollisionShape3D" parent="Map/entity_1124_prop_crate_stack" unique_id=1285680634]
+[node name="High2" type="CollisionShape3D" parent="Map/entity_1124_prop_crate_stack" unique_id=1285680634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("high")
 
-[node name="entity_1125_prop_crate" type="StaticBody3D" parent="Map" unique_id=2016315912 instance=ExtResource("36_y1qxf")]
+[node name="entity_1125_prop_crate" parent="Map" unique_id=2016315912 instance=ExtResource("36_y1qxf")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 19, 4.0625, 21.4375)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1125_prop_crate" unique_id=1920677514]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1125_prop_crate" unique_id=1920677514]
 mesh = ExtResource("37_11qe6")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1125_prop_crate" unique_id=1234905454]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1125_prop_crate" unique_id=1234905454]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("box")
 
-[node name="entity_1126_prop_crate_stack" type="StaticBody3D" parent="Map" unique_id=1857886853 instance=ExtResource("34_pbkwo")]
+[node name="entity_1126_prop_crate_stack" parent="Map" unique_id=1857886853 instance=ExtResource("34_pbkwo")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 13, 2.0625, 97.4375)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1126_prop_crate_stack" unique_id=133091330]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1126_prop_crate_stack" unique_id=133091330]
 mesh = ExtResource("35_gb2la")
 
-[node name="Low" type="CollisionShape3D" parent="Map/entity_1126_prop_crate_stack" unique_id=1697133253]
+[node name="Low2" type="CollisionShape3D" parent="Map/entity_1126_prop_crate_stack" unique_id=1697133253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("low")
 
-[node name="High" type="CollisionShape3D" parent="Map/entity_1126_prop_crate_stack" unique_id=1365557398]
+[node name="High2" type="CollisionShape3D" parent="Map/entity_1126_prop_crate_stack" unique_id=1365557398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("high")
 
-[node name="entity_1127_prop_crate" type="StaticBody3D" parent="Map" unique_id=650949179 instance=ExtResource("36_y1qxf")]
+[node name="entity_1127_prop_crate" parent="Map" unique_id=650949179 instance=ExtResource("36_y1qxf")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9, 4.0625, 21.4375)
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1127_prop_crate" unique_id=1711184896]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1127_prop_crate" unique_id=1711184896]
 mesh = ExtResource("37_11qe6")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1127_prop_crate" unique_id=1097532504]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1127_prop_crate" unique_id=1097532504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("box")
 
@@ -41036,35 +40968,30 @@ light_color = Color(0.54901963, 0.9019608, 1, 1)
 light_energy = 4.0
 omni_range = 10.0
 
-[node name="entity_1245_prop_door" type="Node3D" parent="Map" unique_id=685823799 instance=ExtResource("38_4pimj")]
+[node name="entity_1245_prop_door" parent="Map" unique_id=685823799 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 40, 2, 19)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1245_prop_door" unique_id=276893108]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1245_prop_door" unique_id=276893108]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1245_prop_door/Body" unique_id=270784364]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1245_prop_door/Body" unique_id=1773717917]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1245_prop_door" unique_id=1900366692]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1245_prop_door" unique_id=1900366692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1245_prop_door" unique_id=503442676]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1245_prop_door" unique_id=503442676]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_l5h6w")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1245_prop_door" unique_id=808346977]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1245_prop_door" unique_id=808346977]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_l5h6w")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1245_prop_door" unique_id=1821633048]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1245_prop_door" unique_id=1821633048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41082,35 +41009,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1246_prop_door" type="Node3D" parent="Map" unique_id=465770557 instance=ExtResource("38_4pimj")]
+[node name="entity_1246_prop_door" parent="Map" unique_id=465770557 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 52, 2, 37)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1246_prop_door" unique_id=170189789]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1246_prop_door" unique_id=170189789]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1246_prop_door/Body" unique_id=1519834219]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1246_prop_door/Body" unique_id=875562506]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1246_prop_door" unique_id=2058254894]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1246_prop_door" unique_id=2058254894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1246_prop_door" unique_id=1763887876]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1246_prop_door" unique_id=1763887876]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_50eof")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1246_prop_door" unique_id=1417174529]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1246_prop_door" unique_id=1417174529]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_50eof")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1246_prop_door" unique_id=711522320]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1246_prop_door" unique_id=711522320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41128,35 +41050,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1247_prop_door" type="Node3D" parent="Map" unique_id=324344994 instance=ExtResource("38_4pimj")]
+[node name="entity_1247_prop_door" parent="Map" unique_id=324344994 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14, 3, 63)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1247_prop_door" unique_id=1222702106]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1247_prop_door" unique_id=1222702106]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1247_prop_door/Body" unique_id=623859981]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1247_prop_door/Body" unique_id=1453094979]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1247_prop_door" unique_id=551942529]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1247_prop_door" unique_id=551942529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1247_prop_door" unique_id=1105828514]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1247_prop_door" unique_id=1105828514]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_s6xgs")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1247_prop_door" unique_id=706701486]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1247_prop_door" unique_id=706701486]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_s6xgs")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1247_prop_door" unique_id=890559111]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1247_prop_door" unique_id=890559111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41174,35 +41091,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1248_prop_door" type="Node3D" parent="Map" unique_id=1970248122 instance=ExtResource("38_4pimj")]
+[node name="entity_1248_prop_door" parent="Map" unique_id=1970248122 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 88, 1, 65)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1248_prop_door" unique_id=1622401043]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1248_prop_door" unique_id=1622401043]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1248_prop_door/Body" unique_id=499492407]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1248_prop_door/Body" unique_id=49274118]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1248_prop_door" unique_id=1184727292]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1248_prop_door" unique_id=1184727292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1248_prop_door" unique_id=147746084]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1248_prop_door" unique_id=147746084]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_2ew0m")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1248_prop_door" unique_id=1853213187]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1248_prop_door" unique_id=1853213187]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_2ew0m")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1248_prop_door" unique_id=1970263707]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1248_prop_door" unique_id=1970263707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41220,36 +41132,31 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1249_prop_door" type="Node3D" parent="Map" unique_id=1540142396 instance=ExtResource("38_4pimj")]
+[node name="entity_1249_prop_door" parent="Map" unique_id=1540142396 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 98, 2, 83)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 lock = "jammed"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1249_prop_door" unique_id=1591833470]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1249_prop_door" unique_id=1591833470]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1249_prop_door/Body" unique_id=291087798]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1249_prop_door/Body" unique_id=320697599]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1249_prop_door" unique_id=2122690376]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1249_prop_door" unique_id=2122690376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1249_prop_door" unique_id=2128941933]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1249_prop_door" unique_id=2128941933]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_dx7bh")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1249_prop_door" unique_id=983131448]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1249_prop_door" unique_id=983131448]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_dx7bh")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1249_prop_door" unique_id=1450842221]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1249_prop_door" unique_id=1450842221]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41267,35 +41174,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1250_prop_door" type="Node3D" parent="Map" unique_id=537151214 instance=ExtResource("38_4pimj")]
+[node name="entity_1250_prop_door" parent="Map" unique_id=537151214 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 22, 2, 93)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1250_prop_door" unique_id=1694679337]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1250_prop_door" unique_id=1694679337]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1250_prop_door/Body" unique_id=208549277]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1250_prop_door/Body" unique_id=1872394995]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1250_prop_door" unique_id=1714807640]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1250_prop_door" unique_id=1714807640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1250_prop_door" unique_id=1483413730]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1250_prop_door" unique_id=1483413730]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_m0m11")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1250_prop_door" unique_id=1187013914]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1250_prop_door" unique_id=1187013914]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_m0m11")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1250_prop_door" unique_id=1579183600]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1250_prop_door" unique_id=1579183600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41313,35 +41215,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1251_prop_door" type="Node3D" parent="Map" unique_id=928881276 instance=ExtResource("38_4pimj")]
+[node name="entity_1251_prop_door" parent="Map" unique_id=928881276 instance=ExtResource("38_4pimj")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 47, 2, 10)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1251_prop_door" unique_id=1207221913]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1251_prop_door" unique_id=1207221913]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1251_prop_door/Body" unique_id=1475152968]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1251_prop_door/Body" unique_id=309657324]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1251_prop_door" unique_id=865689575]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1251_prop_door" unique_id=865689575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1251_prop_door" unique_id=593553749]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1251_prop_door" unique_id=593553749]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_jy1nn")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1251_prop_door" unique_id=718453141]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1251_prop_door" unique_id=718453141]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_jy1nn")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1251_prop_door" unique_id=2050764609]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1251_prop_door" unique_id=2050764609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41359,36 +41256,31 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1252_prop_door" type="Node3D" parent="Map" unique_id=353267307 instance=ExtResource("38_4pimj")]
+[node name="entity_1252_prop_door" parent="Map" unique_id=353267307 instance=ExtResource("38_4pimj")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 65, 1, 30)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 lock = "jammed"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1252_prop_door" unique_id=206958505]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1252_prop_door" unique_id=206958505]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1252_prop_door/Body" unique_id=444245837]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1252_prop_door/Body" unique_id=172203216]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1252_prop_door" unique_id=948436448]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1252_prop_door" unique_id=948436448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1252_prop_door" unique_id=161984083]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1252_prop_door" unique_id=161984083]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_v72fp")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1252_prop_door" unique_id=961267126]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1252_prop_door" unique_id=961267126]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_v72fp")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1252_prop_door" unique_id=1678481146]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1252_prop_door" unique_id=1678481146]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41406,35 +41298,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1253_prop_door" type="Node3D" parent="Map" unique_id=878090061 instance=ExtResource("38_4pimj")]
+[node name="entity_1253_prop_door" parent="Map" unique_id=878090061 instance=ExtResource("38_4pimj")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 83, 0, 36)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1253_prop_door" unique_id=1430070570]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1253_prop_door" unique_id=1430070570]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1253_prop_door/Body" unique_id=1689234063]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1253_prop_door/Body" unique_id=1267952603]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1253_prop_door" unique_id=1189403306]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1253_prop_door" unique_id=1189403306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1253_prop_door" unique_id=635762056]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1253_prop_door" unique_id=635762056]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_jcems")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1253_prop_door" unique_id=383689029]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1253_prop_door" unique_id=383689029]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_jcems")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1253_prop_door" unique_id=1806331539]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1253_prop_door" unique_id=1806331539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41452,35 +41339,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1254_prop_door" type="Node3D" parent="Map" unique_id=1869161385 instance=ExtResource("38_4pimj")]
+[node name="entity_1254_prop_door" parent="Map" unique_id=1869161385 instance=ExtResource("38_4pimj")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 17, 2, 42)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1254_prop_door" unique_id=1076005327]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1254_prop_door" unique_id=1076005327]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1254_prop_door/Body" unique_id=566681611]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1254_prop_door/Body" unique_id=1365506446]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1254_prop_door" unique_id=1163674162]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1254_prop_door" unique_id=1163674162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1254_prop_door" unique_id=301419151]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1254_prop_door" unique_id=301419151]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_k7t5u")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1254_prop_door" unique_id=180332296]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1254_prop_door" unique_id=180332296]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_k7t5u")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1254_prop_door" unique_id=583517388]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1254_prop_door" unique_id=583517388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41498,35 +41380,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1255_prop_door" type="Node3D" parent="Map" unique_id=1608905830 instance=ExtResource("38_4pimj")]
+[node name="entity_1255_prop_door" parent="Map" unique_id=1608905830 instance=ExtResource("38_4pimj")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 83, 2, 80)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1255_prop_door" unique_id=12734599]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1255_prop_door" unique_id=12734599]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1255_prop_door/Body" unique_id=1754710460]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1255_prop_door/Body" unique_id=568887183]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1255_prop_door" unique_id=55453977]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1255_prop_door" unique_id=55453977]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1255_prop_door" unique_id=492495744]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1255_prop_door" unique_id=492495744]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_l7opo")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1255_prop_door" unique_id=2106139761]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1255_prop_door" unique_id=2106139761]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_l7opo")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1255_prop_door" unique_id=446174086]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1255_prop_door" unique_id=446174086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41544,35 +41421,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1256_prop_door" type="Node3D" parent="Map" unique_id=1599741757 instance=ExtResource("38_4pimj")]
+[node name="entity_1256_prop_door" parent="Map" unique_id=1599741757 instance=ExtResource("38_4pimj")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 43, 0, 78)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1256_prop_door" unique_id=1142335477]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1256_prop_door" unique_id=1142335477]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1256_prop_door/Body" unique_id=1124093563]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1256_prop_door/Body" unique_id=846043382]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1256_prop_door" unique_id=287158803]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1256_prop_door" unique_id=287158803]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1256_prop_door" unique_id=155214351]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1256_prop_door" unique_id=155214351]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_udarb")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1256_prop_door" unique_id=1558602545]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1256_prop_door" unique_id=1558602545]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_udarb")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1256_prop_door" unique_id=995271381]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1256_prop_door" unique_id=995271381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41590,35 +41462,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1257_prop_door" type="Node3D" parent="Map" unique_id=1517028568 instance=ExtResource("38_4pimj")]
+[node name="entity_1257_prop_door" parent="Map" unique_id=1517028568 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14, 4, 17)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1257_prop_door" unique_id=277651268]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1257_prop_door" unique_id=277651268]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1257_prop_door/Body" unique_id=991670492]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1257_prop_door/Body" unique_id=195003239]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1257_prop_door" unique_id=2067068050]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1257_prop_door" unique_id=2067068050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1257_prop_door" unique_id=1253153905]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1257_prop_door" unique_id=1253153905]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_rkxq5")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1257_prop_door" unique_id=1553933144]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1257_prop_door" unique_id=1553933144]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_rkxq5")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1257_prop_door" unique_id=396612724]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1257_prop_door" unique_id=396612724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41636,36 +41503,31 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1258_prop_door" type="Node3D" parent="Map" unique_id=182270061 instance=ExtResource("38_4pimj")]
+[node name="entity_1258_prop_door" parent="Map" unique_id=182270061 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 36, 2, 33)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 lock = "jammed"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1258_prop_door" unique_id=1324930069]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1258_prop_door" unique_id=1324930069]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1258_prop_door/Body" unique_id=1182713275]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1258_prop_door/Body" unique_id=1372650228]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1258_prop_door" unique_id=496037741]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1258_prop_door" unique_id=496037741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1258_prop_door" unique_id=2093959114]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1258_prop_door" unique_id=2093959114]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_v2xrw")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1258_prop_door" unique_id=142623804]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1258_prop_door" unique_id=142623804]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_v2xrw")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1258_prop_door" unique_id=1861649223]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1258_prop_door" unique_id=1861649223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41683,35 +41545,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1259_prop_door" type="Node3D" parent="Map" unique_id=1735403330 instance=ExtResource("38_4pimj")]
+[node name="entity_1259_prop_door" parent="Map" unique_id=1735403330 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14, 2, 69)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1259_prop_door" unique_id=1207674207]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1259_prop_door" unique_id=1207674207]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1259_prop_door/Body" unique_id=242190537]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1259_prop_door/Body" unique_id=1232022793]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1259_prop_door" unique_id=271598420]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1259_prop_door" unique_id=271598420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1259_prop_door" unique_id=1156579972]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1259_prop_door" unique_id=1156579972]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_pa2wn")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1259_prop_door" unique_id=1699491179]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1259_prop_door" unique_id=1699491179]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_pa2wn")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1259_prop_door" unique_id=1670678524]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1259_prop_door" unique_id=1670678524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41729,35 +41586,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1260_prop_door" type="Node3D" parent="Map" unique_id=1224895960 instance=ExtResource("38_4pimj")]
+[node name="entity_1260_prop_door" parent="Map" unique_id=1224895960 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 88, 1, 71)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1260_prop_door" unique_id=711775409]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1260_prop_door" unique_id=711775409]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1260_prop_door/Body" unique_id=1136647085]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1260_prop_door/Body" unique_id=614215656]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1260_prop_door" unique_id=2034226200]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1260_prop_door" unique_id=2034226200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1260_prop_door" unique_id=857246510]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1260_prop_door" unique_id=857246510]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_5128c")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1260_prop_door" unique_id=1547661122]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1260_prop_door" unique_id=1547661122]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_5128c")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1260_prop_door" unique_id=504676061]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1260_prop_door" unique_id=504676061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41775,35 +41627,30 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1261_prop_door" type="Node3D" parent="Map" unique_id=1719921617 instance=ExtResource("38_4pimj")]
+[node name="entity_1261_prop_door" parent="Map" unique_id=1719921617 instance=ExtResource("38_4pimj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 98, 4, 93)
-script = ExtResource("39_q545v")
 slab_width = 3.5
 texture = "lq/tech/tek_door1"
 
-[node name="Body" type="AnimatableBody3D" parent="Map/entity_1261_prop_door" unique_id=44223873]
+[node name="Body2" type="AnimatableBody3D" parent="Map/entity_1261_prop_door" unique_id=44223873]
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1261_prop_door/Body" unique_id=327165238]
-
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1261_prop_door/Body" unique_id=179888301]
-
-[node name="Lamp" type="OmniLight3D" parent="Map/entity_1261_prop_door" unique_id=212027303]
+[node name="Lamp2" type="OmniLight3D" parent="Map/entity_1261_prop_door" unique_id=212027303]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0)
 light_color = Color(0.35, 0.9, 1, 1)
 light_energy = 0.4
 omni_range = 3.0
 
-[node name="LampGlow" type="MeshInstance3D" parent="Map/entity_1261_prop_door" unique_id=884893140]
+[node name="LampGlow2" type="MeshInstance3D" parent="Map/entity_1261_prop_door" unique_id=884893140]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 3.6, 0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_3xr6p")
 
-[node name="LampGlowBack" type="MeshInstance3D" parent="Map/entity_1261_prop_door" unique_id=1624174659]
+[node name="LampGlowBack2" type="MeshInstance3D" parent="Map/entity_1261_prop_door" unique_id=1624174659]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.6, -0.645)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_3xr6p")
 
-[node name="Sparks" type="CPUParticles3D" parent="Map/entity_1261_prop_door" unique_id=976462288]
+[node name="Sparks2" type="CPUParticles3D" parent="Map/entity_1261_prop_door" unique_id=976462288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 cast_shadow = 0
 emitting = false
@@ -41821,1715 +41668,1269 @@ initial_velocity_min = 1.0
 initial_velocity_max = 3.5
 scale_amount_curve = SubResource("shrink")
 
-[node name="entity_1262_info_player_start" type="CharacterBody3D" parent="Map" unique_id=1316283593 instance=ExtResource("41_0dqtw")]
+[node name="entity_1262_info_player_start" parent="Map" unique_id=1316283593 instance=ExtResource("41_0dqtw")]
 transform = Transform3D(0.37460637, 0, -0.9271839, 0, 1, 0, 0.9271839, 0, 0.37460637, 25, 2.125, 69)
-collision_layer = 2
-collision_mask = 5
-script = ExtResource("42_gh313")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1262_info_player_start" unique_id=726393988]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1262_info_player_start" unique_id=726393988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_orp7g")
 
-[node name="Intent" type="Node" parent="Map/entity_1262_info_player_start" unique_id=1619020774]
+[node name="Intent2" type="Node" parent="Map/entity_1262_info_player_start" unique_id=1619020774]
 script = ExtResource("43_iotdl")
 
-[node name="Head" type="Node3D" parent="Map/entity_1262_info_player_start" unique_id=701727863]
+[node name="Head2" type="Node3D" parent="Map/entity_1262_info_player_start" unique_id=701727863]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
 
-[node name="Camera" type="Camera3D" parent="Map/entity_1262_info_player_start/Head" unique_id=1412208602]
-fov = 85.0
-near = 0.03
+[node name="Hud2" parent="Map/entity_1262_info_player_start" unique_id=2011529311 instance=ExtResource("50_oosol")]
 
-[node name="Weapon" type="Node3D" parent="Map/entity_1262_info_player_start/Head/Camera" unique_id=1154861032]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-script = ExtResource("44_4kpd4")
-data = ExtResource("45_aa5u7")
-slots = Array[ExtResource("46_ek68q")]([ExtResource("45_aa5u7"), ExtResource("47_uf6uu")])
-impact_fx = ExtResource("48_5f7qs")
-tracer_fx = ExtResource("49_bgjf7")
-
-[node name="Viewmodel" type="MeshInstance3D" parent="Map/entity_1262_info_player_start/Head/Camera/Weapon" unique_id=98708106]
-cast_shadow = 0
-
-[node name="Muzzle" type="Marker3D" parent="Map/entity_1262_info_player_start/Head/Camera/Weapon/Viewmodel" unique_id=1926223778]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, -0.45)
-
-[node name="FlashLight" type="OmniLight3D" parent="Map/entity_1262_info_player_start/Head/Camera/Weapon/Viewmodel/Muzzle" unique_id=442529514]
-light_color = Color(0.45, 0.95, 1, 1)
-light_energy = 3.0
-omni_range = 7.0
-
-[node name="FlashMesh" type="MeshInstance3D" parent="Map/entity_1262_info_player_start/Head/Camera/Weapon/Viewmodel/Muzzle" unique_id=1133831907]
-cast_shadow = 0
-mesh = SubResource("flash")
-
-[node name="Flashlight" type="SpotLight3D" parent="Map/entity_1262_info_player_start/Head/Camera" unique_id=1373267093]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, -0.2, 0)
-visible = false
-light_color = Color(1, 0.95, 0.86, 1)
-light_energy = 8.0
-spot_range = 24.0
-spot_attenuation = 0.45
-spot_angle = 22.0
-spot_angle_attenuation = 1.2
-
-[node name="Hud" type="CanvasLayer" parent="Map/entity_1262_info_player_start" unique_id=2011529311 instance=ExtResource("50_oosol")]
-script = ExtResource("51_k8uuq")
-
-[node name="DamageFlash" type="ColorRect" parent="Map/entity_1262_info_player_start/Hud" unique_id=173027343]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.9, 0.05, 0.1, 0)
-
-[node name="Crosshair" type="Control" parent="Map/entity_1262_info_player_start/Hud" unique_id=1420909066]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-mouse_filter = 2
-
-[node name="Dot" type="ColorRect" parent="Map/entity_1262_info_player_start/Hud/Crosshair" unique_id=1817229613]
-layout_mode = 0
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 2.0
-offset_bottom = 2.0
-mouse_filter = 2
-color = Color(0.55, 1, 1, 0.9)
-
-[node name="L" type="ColorRect" parent="Map/entity_1262_info_player_start/Hud/Crosshair" unique_id=933688258]
-layout_mode = 0
-offset_left = -16.0
-offset_top = -1.0
-offset_right = -8.0
-offset_bottom = 1.0
-mouse_filter = 2
-color = Color(0.55, 1, 1, 0.75)
-
-[node name="R" type="ColorRect" parent="Map/entity_1262_info_player_start/Hud/Crosshair" unique_id=901538753]
-layout_mode = 0
-offset_left = 8.0
-offset_top = -1.0
-offset_right = 16.0
-offset_bottom = 1.0
-mouse_filter = 2
-color = Color(0.55, 1, 1, 0.75)
-
-[node name="Health" type="VBoxContainer" parent="Map/entity_1262_info_player_start/Hud" unique_id=1398487901]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -96.0
-offset_right = 232.0
-offset_bottom = -20.0
-grow_vertical = 0
-theme_override_constants/separation = -6
-
-[node name="Caption" type="Label" parent="Map/entity_1262_info_player_start/Hud/Health" unique_id=776978609]
-layout_mode = 2
-text = "HULL"
-label_settings = SubResource("small")
-
-[node name="Value" type="Label" parent="Map/entity_1262_info_player_start/Hud/Health" unique_id=2022233097]
-layout_mode = 2
-text = "100"
-label_settings = SubResource("big")
-
-[node name="Ammo" type="VBoxContainer" parent="Map/entity_1262_info_player_start/Hud" unique_id=1473029653]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -232.0
-offset_top = -96.0
-offset_right = -32.0
-offset_bottom = -20.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/separation = -6
-
-[node name="Caption" type="Label" parent="Map/entity_1262_info_player_start/Hud/Ammo" unique_id=1964463667]
-layout_mode = 2
-text = "CELLS"
-label_settings = SubResource("small")
-horizontal_alignment = 2
-
-[node name="Value" type="Label" parent="Map/entity_1262_info_player_start/Hud/Ammo" unique_id=545164309]
-layout_mode = 2
-text = "30"
-label_settings = SubResource("big")
-horizontal_alignment = 2
-
-[node name="Toast" type="Label" parent="Map/entity_1262_info_player_start/Hud" unique_id=1302685837]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = -120.0
-grow_horizontal = 2
-grow_vertical = 0
-label_settings = SubResource("toast")
-horizontal_alignment = 1
-
-[node name="Banner" type="Label" parent="Map/entity_1262_info_player_start/Hud" unique_id=393813911]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -400.0
-offset_top = 120.0
-offset_right = 400.0
-offset_bottom = 260.0
-grow_horizontal = 2
-label_settings = SubResource("banner")
-horizontal_alignment = 1
-
-[node name="Prompt" type="Label" parent="Map/entity_1262_info_player_start/Hud" unique_id=1772913567]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = 40.0
-offset_right = 300.0
-offset_bottom = 70.0
-grow_horizontal = 2
-label_settings = SubResource("toast")
-horizontal_alignment = 1
-
-[node name="Keys" type="Label" parent="Map/entity_1262_info_player_start/Hud" unique_id=2034954767]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -60.0
-offset_right = 200.0
-offset_bottom = -30.0
-grow_horizontal = 2
-grow_vertical = 0
-label_settings = SubResource("small")
-horizontal_alignment = 1
-
-[node name="entity_1263_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1516320656 instance=ExtResource("52_ga2xw")]
+[node name="entity_1263_monster_skitter" parent="Map" unique_id=1516320656 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 65, 2.25, 59)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1263_monster_skitter" unique_id=475964385]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1263_monster_skitter" unique_id=475964385]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1263_monster_skitter" unique_id=48563853]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1263_monster_skitter" unique_id=48563853]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_2gpvf")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1263_monster_skitter" unique_id=1897289096]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1263_monster_skitter" unique_id=1897289096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1263_monster_skitter" unique_id=506707277]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1263_monster_skitter" unique_id=506707277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1264_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=152749935 instance=ExtResource("52_ga2xw")]
+[node name="entity_1264_monster_skitter" parent="Map" unique_id=152749935 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 41, 2.25, 65)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1264_monster_skitter" unique_id=668274273]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1264_monster_skitter" unique_id=668274273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1264_monster_skitter" unique_id=933784121]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1264_monster_skitter" unique_id=933784121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_44k1d")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1264_monster_skitter" unique_id=599291009]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1264_monster_skitter" unique_id=599291009]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1264_monster_skitter" unique_id=569937132]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1264_monster_skitter" unique_id=569937132]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1265_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=897953460 instance=ExtResource("52_ga2xw")]
+[node name="entity_1265_monster_skitter" parent="Map" unique_id=897953460 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 67, 2.25, 59)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1265_monster_skitter" unique_id=855377828]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1265_monster_skitter" unique_id=855377828]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1265_monster_skitter" unique_id=892400981]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1265_monster_skitter" unique_id=892400981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_qq6cp")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1265_monster_skitter" unique_id=1324882165]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1265_monster_skitter" unique_id=1324882165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1265_monster_skitter" unique_id=1759779643]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1265_monster_skitter" unique_id=1759779643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1266_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1841184606 instance=ExtResource("52_ga2xw")]
+[node name="entity_1266_monster_skitter" parent="Map" unique_id=1841184606 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 59, 2.25, 41)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1266_monster_skitter" unique_id=1898101833]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1266_monster_skitter" unique_id=1898101833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1266_monster_skitter" unique_id=729678172]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1266_monster_skitter" unique_id=729678172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_pep8d")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1266_monster_skitter" unique_id=1408106248]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1266_monster_skitter" unique_id=1408106248]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1266_monster_skitter" unique_id=1543748679]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1266_monster_skitter" unique_id=1543748679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1267_monster_drifter" type="CharacterBody3D" parent="Map" unique_id=2030992427 instance=ExtResource("58_k7ftw")]
+[node name="entity_1267_monster_drifter" parent="Map" unique_id=2030992427 instance=ExtResource("58_k7ftw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 63, 2.25, 69)
-collision_layer = 4
-collision_mask = 5
-motion_mode = 1
-script = ExtResource("53_tsrg8")
-data = ExtResource("59_2454k")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1267_monster_drifter" unique_id=1617456178]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1267_monster_drifter" unique_id=1617456178]
 shape = SubResource("CapsuleShape3D_lbj21")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1267_monster_drifter" unique_id=1183922275]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1267_monster_drifter" unique_id=1183922275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_t8p1e")
 surface_material_override/0 = SubResource("ShaderMaterial_2ncra")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1267_monster_drifter" unique_id=597366917]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1267_monster_drifter" unique_id=597366917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1267_monster_drifter" unique_id=2051965530]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1267_monster_drifter" unique_id=2051965530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 light_color = Color(1, 0.3, 0.75, 1)
 light_energy = 0.5
 omni_range = 3.0
 
-[node name="entity_1268_item_cells" type="Area3D" parent="Map" unique_id=1250927486 instance=ExtResource("62_pgtk4")]
+[node name="entity_1268_item_cells" parent="Map" unique_id=1250927486 instance=ExtResource("62_pgtk4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 47, 2.25, 49)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
-kind = "cells"
-amount = 15
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1268_item_cells" unique_id=1607822293]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1268_item_cells" unique_id=1607822293]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_gd7pn")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1268_item_cells" unique_id=1674560479]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1268_item_cells" unique_id=1674560479]
 mesh = ExtResource("64_6757v")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1268_item_cells" unique_id=713748212]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1268_item_cells" unique_id=713748212]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(0.4, 0.9, 1, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1269_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1038694279 instance=ExtResource("52_ga2xw")]
+[node name="entity_1269_monster_skitter" parent="Map" unique_id=1038694279 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 63, 0.25, 103)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1269_monster_skitter" unique_id=652877201]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1269_monster_skitter" unique_id=652877201]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1269_monster_skitter" unique_id=444231279]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1269_monster_skitter" unique_id=444231279]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_j0a8e")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1269_monster_skitter" unique_id=1704727489]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1269_monster_skitter" unique_id=1704727489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1269_monster_skitter" unique_id=1000222205]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1269_monster_skitter" unique_id=1000222205]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1270_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1755155012 instance=ExtResource("52_ga2xw")]
+[node name="entity_1270_monster_skitter" parent="Map" unique_id=1755155012 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 63, 0.25, 81)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1270_monster_skitter" unique_id=119498272]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1270_monster_skitter" unique_id=119498272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1270_monster_skitter" unique_id=504907983]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1270_monster_skitter" unique_id=504907983]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_uvr3l")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1270_monster_skitter" unique_id=317758680]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1270_monster_skitter" unique_id=317758680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1270_monster_skitter" unique_id=1347381181]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1270_monster_skitter" unique_id=1347381181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1271_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=772116319 instance=ExtResource("52_ga2xw")]
+[node name="entity_1271_monster_skitter" parent="Map" unique_id=772116319 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 61, 0.25, 91)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1271_monster_skitter" unique_id=2123748909]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1271_monster_skitter" unique_id=2123748909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1271_monster_skitter" unique_id=1186907167]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1271_monster_skitter" unique_id=1186907167]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_dbena")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1271_monster_skitter" unique_id=893249942]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1271_monster_skitter" unique_id=893249942]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1271_monster_skitter" unique_id=1280570580]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1271_monster_skitter" unique_id=1280570580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1272_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1392119172 instance=ExtResource("52_ga2xw")]
+[node name="entity_1272_monster_skitter" parent="Map" unique_id=1392119172 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 67, 0.25, 93)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1272_monster_skitter" unique_id=1255708787]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1272_monster_skitter" unique_id=1255708787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1272_monster_skitter" unique_id=15628954]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1272_monster_skitter" unique_id=15628954]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_8e4at")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1272_monster_skitter" unique_id=2089338545]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1272_monster_skitter" unique_id=2089338545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1272_monster_skitter" unique_id=1586730598]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1272_monster_skitter" unique_id=1586730598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1273_monster_drifter" type="CharacterBody3D" parent="Map" unique_id=565216426 instance=ExtResource("58_k7ftw")]
+[node name="entity_1273_monster_drifter" parent="Map" unique_id=565216426 instance=ExtResource("58_k7ftw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 61, 0.25, 89)
-collision_layer = 4
-collision_mask = 5
-motion_mode = 1
-script = ExtResource("53_tsrg8")
-data = ExtResource("59_2454k")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1273_monster_drifter" unique_id=1311869349]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1273_monster_drifter" unique_id=1311869349]
 shape = SubResource("CapsuleShape3D_lbj21")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1273_monster_drifter" unique_id=1160497566]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1273_monster_drifter" unique_id=1160497566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_t8p1e")
 surface_material_override/0 = SubResource("ShaderMaterial_i7ahc")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1273_monster_drifter" unique_id=1620701546]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1273_monster_drifter" unique_id=1620701546]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1273_monster_drifter" unique_id=526570987]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1273_monster_drifter" unique_id=526570987]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 light_color = Color(1, 0.3, 0.75, 1)
 light_energy = 0.5
 omni_range = 3.0
 
-[node name="entity_1274_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=120731842 instance=ExtResource("52_ga2xw")]
+[node name="entity_1274_monster_skitter" parent="Map" unique_id=120731842 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 89, 2.25, 81)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1274_monster_skitter" unique_id=450901316]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1274_monster_skitter" unique_id=450901316]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1274_monster_skitter" unique_id=1103370938]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1274_monster_skitter" unique_id=1103370938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_mcsf2")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1274_monster_skitter" unique_id=433885027]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1274_monster_skitter" unique_id=433885027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1274_monster_skitter" unique_id=2131826883]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1274_monster_skitter" unique_id=2131826883]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1275_item_health" type="Area3D" parent="Map" unique_id=1090956514 instance=ExtResource("65_oj810")]
+[node name="entity_1275_item_health" parent="Map" unique_id=1090956514 instance=ExtResource("65_oj810")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 93, 2.25, 79)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1275_item_health" unique_id=1598329427]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1275_item_health" unique_id=1598329427]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_lldsb")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1275_item_health" unique_id=2109887346]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1275_item_health" unique_id=2109887346]
 mesh = ExtResource("66_62um6")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1275_item_health" unique_id=1772666751]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1275_item_health" unique_id=1772666751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.3, 0.25, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1276_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=2036242894 instance=ExtResource("52_ga2xw")]
+[node name="entity_1276_monster_skitter" parent="Map" unique_id=2036242894 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 79, 0.25, 19)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1276_monster_skitter" unique_id=407415682]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1276_monster_skitter" unique_id=407415682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1276_monster_skitter" unique_id=766874977]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1276_monster_skitter" unique_id=766874977]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_ptvha")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1276_monster_skitter" unique_id=248841067]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1276_monster_skitter" unique_id=248841067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1276_monster_skitter" unique_id=1752669242]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1276_monster_skitter" unique_id=1752669242]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1277_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=586509896 instance=ExtResource("52_ga2xw")]
+[node name="entity_1277_monster_skitter" parent="Map" unique_id=586509896 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 73, 0.25, 19)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1277_monster_skitter" unique_id=1398304045]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1277_monster_skitter" unique_id=1398304045]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1277_monster_skitter" unique_id=472179657]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1277_monster_skitter" unique_id=472179657]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_5g5wj")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1277_monster_skitter" unique_id=2074198428]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1277_monster_skitter" unique_id=2074198428]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1277_monster_skitter" unique_id=801979321]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1277_monster_skitter" unique_id=801979321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1278_item_cells" type="Area3D" parent="Map" unique_id=1749864604 instance=ExtResource("62_pgtk4")]
+[node name="entity_1278_item_cells" parent="Map" unique_id=1749864604 instance=ExtResource("62_pgtk4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 71, 0.25, 27)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
-kind = "cells"
-amount = 15
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1278_item_cells" unique_id=1190768390]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1278_item_cells" unique_id=1190768390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_gd7pn")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1278_item_cells" unique_id=552800212]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1278_item_cells" unique_id=552800212]
 mesh = ExtResource("64_6757v")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1278_item_cells" unique_id=85191838]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1278_item_cells" unique_id=85191838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(0.4, 0.9, 1, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1279_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1324452781 instance=ExtResource("52_ga2xw")]
+[node name="entity_1279_monster_skitter" parent="Map" unique_id=1324452781 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 59, 2.25, 33)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1279_monster_skitter" unique_id=1244765734]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1279_monster_skitter" unique_id=1244765734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1279_monster_skitter" unique_id=1645547294]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1279_monster_skitter" unique_id=1645547294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_2mtko")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1279_monster_skitter" unique_id=999929768]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1279_monster_skitter" unique_id=999929768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1279_monster_skitter" unique_id=487192868]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1279_monster_skitter" unique_id=487192868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1280_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1205312391 instance=ExtResource("52_ga2xw")]
+[node name="entity_1280_monster_skitter" parent="Map" unique_id=1205312391 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 47, 2.25, 27)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1280_monster_skitter" unique_id=1146905754]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1280_monster_skitter" unique_id=1146905754]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1280_monster_skitter" unique_id=891684873]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1280_monster_skitter" unique_id=891684873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_t1442")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1280_monster_skitter" unique_id=75321593]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1280_monster_skitter" unique_id=75321593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1280_monster_skitter" unique_id=1669159740]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1280_monster_skitter" unique_id=1669159740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1281_item_health" type="Area3D" parent="Map" unique_id=1393132246 instance=ExtResource("65_oj810")]
+[node name="entity_1281_item_health" parent="Map" unique_id=1393132246 instance=ExtResource("65_oj810")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 45, 2.25, 33)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1281_item_health" unique_id=2113063566]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1281_item_health" unique_id=2113063566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_lldsb")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1281_item_health" unique_id=153122540]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1281_item_health" unique_id=153122540]
 mesh = ExtResource("66_62um6")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1281_item_health" unique_id=260997133]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1281_item_health" unique_id=260997133]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.3, 0.25, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1282_item_cells" type="Area3D" parent="Map" unique_id=252285187 instance=ExtResource("62_pgtk4")]
+[node name="entity_1282_item_cells" parent="Map" unique_id=252285187 instance=ExtResource("62_pgtk4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 57, 2.25, 29)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
-kind = "cells"
-amount = 15
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1282_item_cells" unique_id=810345456]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1282_item_cells" unique_id=810345456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_gd7pn")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1282_item_cells" unique_id=240634223]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1282_item_cells" unique_id=240634223]
 mesh = ExtResource("64_6757v")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1282_item_cells" unique_id=1919758300]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1282_item_cells" unique_id=1919758300]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(0.4, 0.9, 1, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1283_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=846269211 instance=ExtResource("52_ga2xw")]
+[node name="entity_1283_monster_skitter" parent="Map" unique_id=846269211 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 83, 1.25, 51)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1283_monster_skitter" unique_id=1334724537]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1283_monster_skitter" unique_id=1334724537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1283_monster_skitter" unique_id=841624575]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1283_monster_skitter" unique_id=841624575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_kw0xk")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1283_monster_skitter" unique_id=1274020696]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1283_monster_skitter" unique_id=1274020696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1283_monster_skitter" unique_id=480463781]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1283_monster_skitter" unique_id=480463781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1284_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=23626929 instance=ExtResource("52_ga2xw")]
+[node name="entity_1284_monster_skitter" parent="Map" unique_id=23626929 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 89, 1.25, 51)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1284_monster_skitter" unique_id=652862250]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1284_monster_skitter" unique_id=652862250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1284_monster_skitter" unique_id=4711617]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1284_monster_skitter" unique_id=4711617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_1ivnl")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1284_monster_skitter" unique_id=197421933]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1284_monster_skitter" unique_id=197421933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1284_monster_skitter" unique_id=93133376]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1284_monster_skitter" unique_id=93133376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1285_item_cells" type="Area3D" parent="Map" unique_id=1894981653 instance=ExtResource("62_pgtk4")]
+[node name="entity_1285_item_cells" parent="Map" unique_id=1894981653 instance=ExtResource("62_pgtk4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 87, 1.25, 59)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
-kind = "cells"
-amount = 15
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1285_item_cells" unique_id=1342151337]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1285_item_cells" unique_id=1342151337]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_gd7pn")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1285_item_cells" unique_id=1673174057]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1285_item_cells" unique_id=1673174057]
 mesh = ExtResource("64_6757v")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1285_item_cells" unique_id=667898904]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1285_item_cells" unique_id=667898904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(0.4, 0.9, 1, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1286_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1525845446 instance=ExtResource("52_ga2xw")]
+[node name="entity_1286_monster_skitter" parent="Map" unique_id=1525845446 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11, 4.25, 25)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1286_monster_skitter" unique_id=992623453]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1286_monster_skitter" unique_id=992623453]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1286_monster_skitter" unique_id=1485820512]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1286_monster_skitter" unique_id=1485820512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_q6ya2")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1286_monster_skitter" unique_id=881010890]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1286_monster_skitter" unique_id=881010890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1286_monster_skitter" unique_id=904345463]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1286_monster_skitter" unique_id=904345463]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1287_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=2014325640 instance=ExtResource("52_ga2xw")]
+[node name="entity_1287_monster_skitter" parent="Map" unique_id=2014325640 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9, 4.25, 29)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1287_monster_skitter" unique_id=12425717]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1287_monster_skitter" unique_id=12425717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1287_monster_skitter" unique_id=602637615]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1287_monster_skitter" unique_id=602637615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_uvda0")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1287_monster_skitter" unique_id=1042889571]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1287_monster_skitter" unique_id=1042889571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1287_monster_skitter" unique_id=354449987]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1287_monster_skitter" unique_id=354449987]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1288_item_health" type="Area3D" parent="Map" unique_id=735055261 instance=ExtResource("65_oj810")]
+[node name="entity_1288_item_health" parent="Map" unique_id=735055261 instance=ExtResource("65_oj810")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17, 4.25, 29)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1288_item_health" unique_id=1406895596]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1288_item_health" unique_id=1406895596]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_lldsb")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1288_item_health" unique_id=1741492349]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1288_item_health" unique_id=1741492349]
 mesh = ExtResource("66_62um6")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1288_item_health" unique_id=1769147745]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1288_item_health" unique_id=1769147745]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.3, 0.25, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1289_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=608055141 instance=ExtResource("52_ga2xw")]
+[node name="entity_1289_monster_skitter" parent="Map" unique_id=608055141 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 41, 2.25, 13)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1289_monster_skitter" unique_id=1584381403]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1289_monster_skitter" unique_id=1584381403]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1289_monster_skitter" unique_id=500325027]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1289_monster_skitter" unique_id=500325027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_olhsx")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1289_monster_skitter" unique_id=1572034122]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1289_monster_skitter" unique_id=1572034122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1289_monster_skitter" unique_id=344310613]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1289_monster_skitter" unique_id=344310613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1290_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=138337534 instance=ExtResource("52_ga2xw")]
+[node name="entity_1290_monster_skitter" parent="Map" unique_id=138337534 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 37, 2.25, 7)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1290_monster_skitter" unique_id=509869206]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1290_monster_skitter" unique_id=509869206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1290_monster_skitter" unique_id=109530215]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1290_monster_skitter" unique_id=109530215]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_kbk8x")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1290_monster_skitter" unique_id=22642805]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1290_monster_skitter" unique_id=22642805]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1290_monster_skitter" unique_id=1285703881]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1290_monster_skitter" unique_id=1285703881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1291_item_health" type="Area3D" parent="Map" unique_id=1398993881 instance=ExtResource("65_oj810")]
+[node name="entity_1291_item_health" parent="Map" unique_id=1398993881 instance=ExtResource("65_oj810")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 29, 2.25, 7)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1291_item_health" unique_id=1028427380]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1291_item_health" unique_id=1028427380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_lldsb")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1291_item_health" unique_id=742267922]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1291_item_health" unique_id=742267922]
 mesh = ExtResource("66_62um6")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1291_item_health" unique_id=2065882110]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1291_item_health" unique_id=2065882110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.3, 0.25, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1292_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1525032170 instance=ExtResource("52_ga2xw")]
+[node name="entity_1292_monster_skitter" parent="Map" unique_id=1525032170 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 19, 3.25, 49)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1292_monster_skitter" unique_id=1544200893]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1292_monster_skitter" unique_id=1544200893]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1292_monster_skitter" unique_id=688399048]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1292_monster_skitter" unique_id=688399048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_pjdjp")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1292_monster_skitter" unique_id=380314131]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1292_monster_skitter" unique_id=380314131]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1292_monster_skitter" unique_id=2125950087]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1292_monster_skitter" unique_id=2125950087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1293_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=66182247 instance=ExtResource("52_ga2xw")]
+[node name="entity_1293_monster_skitter" parent="Map" unique_id=66182247 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 101, 2.25, 43)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1293_monster_skitter" unique_id=1210422508]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1293_monster_skitter" unique_id=1210422508]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1293_monster_skitter" unique_id=1450351636]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1293_monster_skitter" unique_id=1450351636]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_p344f")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1293_monster_skitter" unique_id=1071128112]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1293_monster_skitter" unique_id=1071128112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1293_monster_skitter" unique_id=823084839]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1293_monster_skitter" unique_id=823084839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1294_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1184211782 instance=ExtResource("52_ga2xw")]
+[node name="entity_1294_monster_skitter" parent="Map" unique_id=1184211782 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 97, 2.25, 29)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1294_monster_skitter" unique_id=630552169]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1294_monster_skitter" unique_id=630552169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1294_monster_skitter" unique_id=1974165281]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1294_monster_skitter" unique_id=1974165281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_c3bkc")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1294_monster_skitter" unique_id=926825843]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1294_monster_skitter" unique_id=926825843]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1294_monster_skitter" unique_id=2137976989]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1294_monster_skitter" unique_id=2137976989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1295_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=667794298 instance=ExtResource("52_ga2xw")]
+[node name="entity_1295_monster_skitter" parent="Map" unique_id=667794298 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 13, 2.25, 99)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1295_monster_skitter" unique_id=541776166]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1295_monster_skitter" unique_id=541776166]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1295_monster_skitter" unique_id=754736176]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1295_monster_skitter" unique_id=754736176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_cb075")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1295_monster_skitter" unique_id=1213796378]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1295_monster_skitter" unique_id=1213796378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1295_monster_skitter" unique_id=562838118]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1295_monster_skitter" unique_id=562838118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1296_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=901722833 instance=ExtResource("52_ga2xw")]
+[node name="entity_1296_monster_skitter" parent="Map" unique_id=901722833 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 51, 0.25, 101)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1296_monster_skitter" unique_id=1230732066]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1296_monster_skitter" unique_id=1230732066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1296_monster_skitter" unique_id=128415903]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1296_monster_skitter" unique_id=128415903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_2p763")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1296_monster_skitter" unique_id=400354580]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1296_monster_skitter" unique_id=400354580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1296_monster_skitter" unique_id=2086292125]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1296_monster_skitter" unique_id=2086292125]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1297_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=626809292 instance=ExtResource("52_ga2xw")]
+[node name="entity_1297_monster_skitter" parent="Map" unique_id=626809292 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 53, 0.25, 95)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1297_monster_skitter" unique_id=1114034255]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1297_monster_skitter" unique_id=1114034255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1297_monster_skitter" unique_id=57112758]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1297_monster_skitter" unique_id=57112758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_xjao1")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1297_monster_skitter" unique_id=2011243307]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1297_monster_skitter" unique_id=2011243307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1297_monster_skitter" unique_id=54574084]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1297_monster_skitter" unique_id=54574084]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1298_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=236288568 instance=ExtResource("52_ga2xw")]
+[node name="entity_1298_monster_skitter" parent="Map" unique_id=236288568 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 37, 0.25, 99)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1298_monster_skitter" unique_id=1804401243]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1298_monster_skitter" unique_id=1804401243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1298_monster_skitter" unique_id=1071943738]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1298_monster_skitter" unique_id=1071943738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_2r2gt")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1298_monster_skitter" unique_id=756706233]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1298_monster_skitter" unique_id=756706233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1298_monster_skitter" unique_id=1257502719]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1298_monster_skitter" unique_id=1257502719]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1299_monster_drifter" type="CharacterBody3D" parent="Map" unique_id=232476774 instance=ExtResource("58_k7ftw")]
+[node name="entity_1299_monster_drifter" parent="Map" unique_id=232476774 instance=ExtResource("58_k7ftw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 45, 1.25, 95)
-collision_layer = 4
-collision_mask = 5
-motion_mode = 1
-script = ExtResource("53_tsrg8")
-data = ExtResource("59_2454k")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1299_monster_drifter" unique_id=660104210]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1299_monster_drifter" unique_id=660104210]
 shape = SubResource("CapsuleShape3D_lbj21")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1299_monster_drifter" unique_id=503331887]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1299_monster_drifter" unique_id=503331887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_t8p1e")
 surface_material_override/0 = SubResource("ShaderMaterial_dfwyh")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1299_monster_drifter" unique_id=1748780766]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1299_monster_drifter" unique_id=1748780766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1299_monster_drifter" unique_id=81565975]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1299_monster_drifter" unique_id=81565975]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 light_color = Color(1, 0.3, 0.75, 1)
 light_energy = 0.5
 omni_range = 3.0
 
-[node name="entity_1300_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1911116189 instance=ExtResource("52_ga2xw")]
+[node name="entity_1300_monster_skitter" parent="Map" unique_id=1911116189 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 107, 3.25, 19)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1300_monster_skitter" unique_id=2126424951]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1300_monster_skitter" unique_id=2126424951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1300_monster_skitter" unique_id=1403832153]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1300_monster_skitter" unique_id=1403832153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_ylmlu")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1300_monster_skitter" unique_id=908786457]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1300_monster_skitter" unique_id=908786457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1300_monster_skitter" unique_id=504661776]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1300_monster_skitter" unique_id=504661776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1301_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=2098018466 instance=ExtResource("52_ga2xw")]
+[node name="entity_1301_monster_skitter" parent="Map" unique_id=2098018466 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 99, 3.25, 23)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1301_monster_skitter" unique_id=673058065]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1301_monster_skitter" unique_id=673058065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1301_monster_skitter" unique_id=502639963]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1301_monster_skitter" unique_id=502639963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_7h56l")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1301_monster_skitter" unique_id=346610594]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1301_monster_skitter" unique_id=346610594]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1301_monster_skitter" unique_id=223183082]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1301_monster_skitter" unique_id=223183082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1302_item_cells" type="Area3D" parent="Map" unique_id=1052305431 instance=ExtResource("62_pgtk4")]
+[node name="entity_1302_item_cells" parent="Map" unique_id=1052305431 instance=ExtResource("62_pgtk4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 101, 3.25, 23)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
-kind = "cells"
-amount = 15
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1302_item_cells" unique_id=1796972914]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1302_item_cells" unique_id=1796972914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_gd7pn")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1302_item_cells" unique_id=382567522]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1302_item_cells" unique_id=382567522]
 mesh = ExtResource("64_6757v")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1302_item_cells" unique_id=702297233]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1302_item_cells" unique_id=702297233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(0.4, 0.9, 1, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1303_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=818836618 instance=ExtResource("52_ga2xw")]
+[node name="entity_1303_monster_skitter" parent="Map" unique_id=818836618 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 57, 1.25, 7)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1303_monster_skitter" unique_id=182947604]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1303_monster_skitter" unique_id=182947604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1303_monster_skitter" unique_id=395235020]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1303_monster_skitter" unique_id=395235020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_sob81")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1303_monster_skitter" unique_id=255894355]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1303_monster_skitter" unique_id=255894355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1303_monster_skitter" unique_id=176397274]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1303_monster_skitter" unique_id=176397274]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1304_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=269936162 instance=ExtResource("52_ga2xw")]
+[node name="entity_1304_monster_skitter" parent="Map" unique_id=269936162 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 35, 2.25, 37)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1304_monster_skitter" unique_id=573159294]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1304_monster_skitter" unique_id=573159294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1304_monster_skitter" unique_id=1885846088]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1304_monster_skitter" unique_id=1885846088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_hcdw1")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1304_monster_skitter" unique_id=1081449287]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1304_monster_skitter" unique_id=1081449287]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1304_monster_skitter" unique_id=947807697]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1304_monster_skitter" unique_id=947807697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1305_item_cells" type="Area3D" parent="Map" unique_id=465668346 instance=ExtResource("62_pgtk4")]
+[node name="entity_1305_item_cells" parent="Map" unique_id=465668346 instance=ExtResource("62_pgtk4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 25, 2.25, 41)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("63_lscjb")
-kind = "cells"
-amount = 15
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1305_item_cells" unique_id=366630400]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1305_item_cells" unique_id=366630400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("SphereShape3D_gd7pn")
 
-[node name="Mesh" type="MeshInstance3D" parent="Map/entity_1305_item_cells" unique_id=1789712324]
+[node name="Mesh2" type="MeshInstance3D" parent="Map/entity_1305_item_cells" unique_id=1789712324]
 mesh = ExtResource("64_6757v")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1305_item_cells" unique_id=545592231]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1305_item_cells" unique_id=545592231]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(0.4, 0.9, 1, 1)
 light_energy = 0.8
 omni_range = 2.5
 
-[node name="entity_1306_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1692904568 instance=ExtResource("52_ga2xw")]
+[node name="entity_1306_monster_skitter" parent="Map" unique_id=1692904568 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 101, 4.25, 103)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1306_monster_skitter" unique_id=561293891]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1306_monster_skitter" unique_id=561293891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1306_monster_skitter" unique_id=451384816]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1306_monster_skitter" unique_id=451384816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_e3otu")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1306_monster_skitter" unique_id=1923979231]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1306_monster_skitter" unique_id=1923979231]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1306_monster_skitter" unique_id=1705277189]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1306_monster_skitter" unique_id=1705277189]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1307_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=2003784767 instance=ExtResource("52_ga2xw")]
+[node name="entity_1307_monster_skitter" parent="Map" unique_id=2003784767 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 105, 4.25, 103)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1307_monster_skitter" unique_id=1417181293]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1307_monster_skitter" unique_id=1417181293]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1307_monster_skitter" unique_id=930556724]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1307_monster_skitter" unique_id=930556724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_fo6qp")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1307_monster_skitter" unique_id=1766057198]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1307_monster_skitter" unique_id=1766057198]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1307_monster_skitter" unique_id=1148471443]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1307_monster_skitter" unique_id=1148471443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1308_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1218478994 instance=ExtResource("52_ga2xw")]
+[node name="entity_1308_monster_skitter" parent="Map" unique_id=1218478994 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 51, 1.25, 9)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1308_monster_skitter" unique_id=306869042]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1308_monster_skitter" unique_id=306869042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1308_monster_skitter" unique_id=274017130]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1308_monster_skitter" unique_id=274017130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_00lae")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1308_monster_skitter" unique_id=804321361]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1308_monster_skitter" unique_id=804321361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1308_monster_skitter" unique_id=1473242170]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1308_monster_skitter" unique_id=1473242170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1309_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1923163199 instance=ExtResource("52_ga2xw")]
+[node name="entity_1309_monster_skitter" parent="Map" unique_id=1923163199 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17, 2.25, 13)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1309_monster_skitter" unique_id=163330933]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1309_monster_skitter" unique_id=163330933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1309_monster_skitter" unique_id=1452134420]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1309_monster_skitter" unique_id=1452134420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_143dr")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1309_monster_skitter" unique_id=289671061]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1309_monster_skitter" unique_id=289671061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1309_monster_skitter" unique_id=848623671]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1309_monster_skitter" unique_id=848623671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1310_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1792805764 instance=ExtResource("52_ga2xw")]
+[node name="entity_1310_monster_skitter" parent="Map" unique_id=1792805764 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 51, 2.25, 35)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1310_monster_skitter" unique_id=953473912]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1310_monster_skitter" unique_id=953473912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1310_monster_skitter" unique_id=2006484810]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1310_monster_skitter" unique_id=2006484810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_1na66")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1310_monster_skitter" unique_id=198649807]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1310_monster_skitter" unique_id=198649807]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1310_monster_skitter" unique_id=1265086074]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1310_monster_skitter" unique_id=1265086074]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1311_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=787063414 instance=ExtResource("52_ga2xw")]
+[node name="entity_1311_monster_skitter" parent="Map" unique_id=787063414 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 93, 2.25, 45)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1311_monster_skitter" unique_id=516899258]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1311_monster_skitter" unique_id=516899258]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1311_monster_skitter" unique_id=493858180]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1311_monster_skitter" unique_id=493858180]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_ll48a")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1311_monster_skitter" unique_id=1490551495]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1311_monster_skitter" unique_id=1490551495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1311_monster_skitter" unique_id=1374976089]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1311_monster_skitter" unique_id=1374976089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1312_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1253785271 instance=ExtResource("52_ga2xw")]
+[node name="entity_1312_monster_skitter" parent="Map" unique_id=1253785271 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15, 3.25, 65)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1312_monster_skitter" unique_id=370501959]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1312_monster_skitter" unique_id=370501959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1312_monster_skitter" unique_id=358290042]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1312_monster_skitter" unique_id=358290042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_2xufs")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1312_monster_skitter" unique_id=1223935544]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1312_monster_skitter" unique_id=1223935544]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1312_monster_skitter" unique_id=1564244703]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1312_monster_skitter" unique_id=1564244703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1313_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1951923073 instance=ExtResource("52_ga2xw")]
+[node name="entity_1313_monster_skitter" parent="Map" unique_id=1951923073 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 89, 1.25, 67)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1313_monster_skitter" unique_id=1916537356]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1313_monster_skitter" unique_id=1916537356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1313_monster_skitter" unique_id=318703288]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1313_monster_skitter" unique_id=318703288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_acae3")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1313_monster_skitter" unique_id=1234333246]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1313_monster_skitter" unique_id=1234333246]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1313_monster_skitter" unique_id=270378386]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1313_monster_skitter" unique_id=270378386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1314_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=931934189 instance=ExtResource("52_ga2xw")]
+[node name="entity_1314_monster_skitter" parent="Map" unique_id=931934189 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 87, 1.25, 67)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1314_monster_skitter" unique_id=1156065571]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1314_monster_skitter" unique_id=1156065571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1314_monster_skitter" unique_id=494073210]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1314_monster_skitter" unique_id=494073210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_7ofg0")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1314_monster_skitter" unique_id=1360686488]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1314_monster_skitter" unique_id=1360686488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1314_monster_skitter" unique_id=2076167648]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1314_monster_skitter" unique_id=2076167648]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1315_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=919228140 instance=ExtResource("52_ga2xw")]
+[node name="entity_1315_monster_skitter" parent="Map" unique_id=919228140 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 89, 2.25, 75)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1315_monster_skitter" unique_id=493704609]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1315_monster_skitter" unique_id=493704609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1315_monster_skitter" unique_id=108759969]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1315_monster_skitter" unique_id=108759969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_xusf3")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1315_monster_skitter" unique_id=1179093418]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1315_monster_skitter" unique_id=1179093418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1315_monster_skitter" unique_id=15489641]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1315_monster_skitter" unique_id=15489641]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1316_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1233818628 instance=ExtResource("52_ga2xw")]
+[node name="entity_1316_monster_skitter" parent="Map" unique_id=1233818628 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 79, 2.25, 79)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1316_monster_skitter" unique_id=350522416]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1316_monster_skitter" unique_id=350522416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1316_monster_skitter" unique_id=1090643629]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1316_monster_skitter" unique_id=1090643629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_j4kmm")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1316_monster_skitter" unique_id=1992753912]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1316_monster_skitter" unique_id=1992753912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1316_monster_skitter" unique_id=1411141422]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1316_monster_skitter" unique_id=1411141422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1317_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1389031268 instance=ExtResource("52_ga2xw")]
+[node name="entity_1317_monster_skitter" parent="Map" unique_id=1389031268 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 97, 3.25, 89)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1317_monster_skitter" unique_id=134656417]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1317_monster_skitter" unique_id=134656417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1317_monster_skitter" unique_id=553980002]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1317_monster_skitter" unique_id=553980002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_l8g3u")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1317_monster_skitter" unique_id=1137538947]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1317_monster_skitter" unique_id=1137538947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1317_monster_skitter" unique_id=1592677099]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1317_monster_skitter" unique_id=1592677099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1318_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1078466225 instance=ExtResource("52_ga2xw")]
+[node name="entity_1318_monster_skitter" parent="Map" unique_id=1078466225 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 23, 2.25, 91)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1318_monster_skitter" unique_id=1410335534]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1318_monster_skitter" unique_id=1410335534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1318_monster_skitter" unique_id=446956091]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1318_monster_skitter" unique_id=446956091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_eqg5o")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1318_monster_skitter" unique_id=376577926]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1318_monster_skitter" unique_id=376577926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1318_monster_skitter" unique_id=1261836452]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1318_monster_skitter" unique_id=1261836452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1319_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1117226054 instance=ExtResource("52_ga2xw")]
+[node name="entity_1319_monster_skitter" parent="Map" unique_id=1117226054 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 59, 0.25, 93)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1319_monster_skitter" unique_id=701690161]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1319_monster_skitter" unique_id=701690161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1319_monster_skitter" unique_id=734939326]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1319_monster_skitter" unique_id=734939326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_ednps")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1319_monster_skitter" unique_id=1893908916]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1319_monster_skitter" unique_id=1893908916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1319_monster_skitter" unique_id=1830980350]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1319_monster_skitter" unique_id=1830980350]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1320_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=957448827 instance=ExtResource("52_ga2xw")]
+[node name="entity_1320_monster_skitter" parent="Map" unique_id=957448827 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 23, 2.25, 97)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1320_monster_skitter" unique_id=1066845362]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1320_monster_skitter" unique_id=1066845362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1320_monster_skitter" unique_id=403014390]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1320_monster_skitter" unique_id=403014390]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_xs20f")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1320_monster_skitter" unique_id=1155415718]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1320_monster_skitter" unique_id=1155415718]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1320_monster_skitter" unique_id=591269394]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1320_monster_skitter" unique_id=591269394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1321_monster_skitter" type="CharacterBody3D" parent="Map" unique_id=1638604374 instance=ExtResource("52_ga2xw")]
+[node name="entity_1321_monster_skitter" parent="Map" unique_id=1638604374 instance=ExtResource("52_ga2xw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 23, 2.25, 103)
-collision_layer = 4
-collision_mask = 5
-script = ExtResource("53_tsrg8")
-data = ExtResource("54_mhs14")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1321_monster_skitter" unique_id=650193309]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1321_monster_skitter" unique_id=650193309]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("shape")
 
-[node name="Sprite" type="MeshInstance3D" parent="Map/entity_1321_monster_skitter" unique_id=2084282449]
+[node name="Sprite2" type="MeshInstance3D" parent="Map/entity_1321_monster_skitter" unique_id=2084282449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82, 0)
 cast_shadow = 0
 mesh = SubResource("quad")
 surface_material_override/0 = SubResource("ShaderMaterial_fltq6")
 
-[node name="Eye" type="Marker3D" parent="Map/entity_1321_monster_skitter" unique_id=1636697148]
+[node name="Eye2" type="Marker3D" parent="Map/entity_1321_monster_skitter" unique_id=1636697148]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 
-[node name="Glow" type="OmniLight3D" parent="Map/entity_1321_monster_skitter" unique_id=1604761742]
+[node name="Glow2" type="OmniLight3D" parent="Map/entity_1321_monster_skitter" unique_id=1604761742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 light_color = Color(1, 0.6, 0.2, 1)
 light_energy = 0.35
 omni_range = 2.5
 
-[node name="entity_1322_trigger_exit" type="Area3D" parent="Map" unique_id=492296788 instance=ExtResource("67_7onws")]
+[node name="entity_1322_trigger_exit" parent="Map" unique_id=492296788 instance=ExtResource("67_7onws")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 101, 4.25, 13)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-script = ExtResource("68_7so25")
 
-[node name="Shape" type="CollisionShape3D" parent="Map/entity_1322_trigger_exit" unique_id=783434905]
+[node name="Shape2" type="CollisionShape3D" parent="Map/entity_1322_trigger_exit" unique_id=783434905]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_ltnau")
 
-[node name="Ring" type="MeshInstance3D" parent="Map/entity_1322_trigger_exit" unique_id=853684878]
+[node name="Ring2" type="MeshInstance3D" parent="Map/entity_1322_trigger_exit" unique_id=853684878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 cast_shadow = 0
 mesh = SubResource("ring")
 
-[node name="Light" type="OmniLight3D" parent="Map/entity_1322_trigger_exit" unique_id=787560581]
+[node name="Light2" type="OmniLight3D" parent="Map/entity_1322_trigger_exit" unique_id=787560581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 light_color = Color(0.4, 1, 0.75, 1)
 light_energy = 1.5
