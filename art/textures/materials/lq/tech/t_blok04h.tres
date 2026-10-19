@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_blok04h.png" id="1_ptp4f"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_blok04h_normal.png" id="2_gblom"]
+[ext_resource type="Texture2D" path="res://art/textures/lq/tech/t_blok04h_roughness.png" id="3_wpclp"]
+
+[resource]
+albedo_texture = ExtResource("1_ptp4f")
+metallic = 0.3
+metallic_specular = 0.45
+roughness_texture = ExtResource("3_wpclp")
+emission_energy_multiplier = 2.5
+normal_enabled = true
+normal_texture = ExtResource("2_gblom")
+texture_filter = 2

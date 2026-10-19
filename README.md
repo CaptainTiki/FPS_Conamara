@@ -16,7 +16,8 @@ FuncGodot, 2D sprite enemies, retro textures + modern lighting.
 
 Layout → `tools/mapgen.py` (rooms, loops, pits, catwalk, stairs, doors) → `levels/<name>.json`.
 Dressing → `tools/export_map.py` → `levels/<name>.map`: one TrenchBroom layer per rule (floor,
-border, ceiling, skirting, panel, cornice, beam, stairs, lamp, doorframe), brushes chunked into
+border, ceiling, skirting, panel, cornice, beam, stairs, lamp, doorframe, rib, pipe, pilaster, wallbox,
+pillar), brushes chunked into
 8 m `func_detail` entities; entities for player start, lights, doors, enemies, pickups, exit,
 screenshot markers. Scene → `tools/build_tb_level.gd` (FuncGodot) → `levels/<name>.tscn`, root
 script `scripts/level.gd` (flow field for enemies from the level json, dev hooks).

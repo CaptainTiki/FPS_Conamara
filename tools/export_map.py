@@ -38,12 +38,15 @@ THEMES = {
         "floor": "tb/floor", "floor_metal": "tb/floor_metal", "floor_grate": "tb/floor_grate", "pit": "tb/gutter_glow",
         "kick": "tb/kick", "chamfer": "tb/chamfer", "ceiling": "tb/ceiling", "beam": "tb/beam",
         "lamp": "tb/light_strip", "trim": "tb/trim", "rod": "tb/trim", "door_frame": "tb/trim", "door": "tb/door",
+        "rib": "tb/trim", "pipe": "tb/trim", "pilaster": "tb/trim", "vent": "tb/wall_vent", "boxes": ["tb/console", "tb/wall_vent"],
         "panels": [("tb/wall", .72), ("tb/wall_vent", 1.0)],
     },
     "quake": {
         "floor": "lq/tech/t_flor2a", "floor_metal": "lq/tech/t_flor1a", "floor_grate": "lq/tech/tek_grate", "pit": "lq/tech/tek_grate",
         "kick": "lq/tech/t_trim2a", "chamfer": "lq/tech/t_trim1c", "ceiling": "lq/tech/t_flat05", "beam": "lq/tech/t_trim1d",
         "lamp": "lq/tech/tlight11_fbr", "trim": "lq/tech/metalstrip_1", "rod": "lq/tech/tek_pipe2", "door_frame": "lq/tech/t_trim2d", "door": "lq/tech/tek_door1",
+        "rib": "lq/tech/t_trim2d", "pipe": "lq/tech/tek_pipe2", "pilaster": "lq/tech/t_trim1c", "vent": "lq/tech/t_blok06h",
+        "boxes": ["lq/tech/comp1_1", "lq/tech/comp1_2", "lq/tech/comp1_5", "lq/tech/comp1_8", "lq/tech/t_blok05", "lq/tech/t_blok04h"],
         "panels": [("lq/tech/t_wall1a", .30), ("lq/tech/t_wall3a", .50), ("lq/tech/t_blok03", .65),
                    ("lq/tech/t_blok09", .78), ("lq/tech/t_wall1b", .88), ("lq/tech/comp1_2", .94), ("lq/tech/t_blok06", 1.0)],
     },
@@ -131,6 +134,37 @@ def prism(poly, z0, z1, side_tex, cap_tex):
     out.append("}")
     return "\n".join(out)
 
+def extrude(axis, a0, a1, poly, tex, cap=None):
+    """Prism of a 2D polygon extruded along `axis` ('x' | 'y' | 'z') from a0 to a1.
+    poly coordinates are the other two axes in order: x->(y,z)  y->(x,z)  z->(x,y)."""
+    import numpy as _np
+    tex = role_tex(tex); cap = role_tex(cap or tex)
+    def P(a, uv):
+        u, v = uv
+        return {"x": (a, u, v), "y": (u, a, v), "z": (u, v, a)}[axis]
+    n = len(poly); faces = []
+    faces.append(((P(a1, poly[0]), P(a1, poly[1]), P(a1, poly[2])), cap))
+    faces.append(((P(a0, poly[0]), P(a0, poly[1]), P(a0, poly[2])), cap))
+    for i in range(n):
+        faces.append(((P(a0, poly[i]), P(a0, poly[(i + 1) % n]), P(a1, poly[(i + 1) % n])), tex))
+    pts_all = _np.array([p for f, _ in faces for p in f], dtype=float); cen = pts_all.mean(axis=0)
+    out = ["{"]
+    for pts, t in faces:
+        p = _np.array(pts, dtype=float)
+        nrm = _np.cross(p[0] - p[1], p[2] - p[1])
+        if _np.dot(nrm, p[1] - cen) < 0: pts = (pts[0], pts[2], pts[1]); p = _np.array(pts, dtype=float)
+        nrm = _np.cross(p[0] - p[1], p[2] - p[1]); nrm /= _np.linalg.norm(nrm)
+        # texture axes in the face plane: u along the first edge, v = n x u
+        u = p[0] - p[1]; u /= _np.linalg.norm(u); v = _np.cross(nrm, u)
+        axes = f"[ {u[0]:.4f} {u[1]:.4f} {u[2]:.4f} 0 ] [ {v[0]:.4f} {v[1]:.4f} {v[2]:.4f} 0 ]"
+        out.append(" ".join(f"( {a:g} {b:g} {c:g} )" for a, b, c in pts) + f" {t} {axes} 0 1 1")
+    out.append("}")
+    return "\n".join(out)
+
+def octagon(cx, cy, r):
+    k = r * 0.4142
+    return [(cx - k, cy - r), (cx + k, cy - r), (cx + r, cy - k), (cx + r, cy + k), (cx + k, cy + r), (cx - k, cy + r), (cx - r, cy + k), (cx - r, cy - k)]
+
 def merge_rects(cells):
     cells = set(cells); rects = []
     while cells:
@@ -167,7 +201,7 @@ def build(level):
     base = fmin * LVL - 16
     top = cmax + 16
     def Y(y): return (H - y) * CELL          # flip rows so the map reads like the PNG
-    layers = {k: [] for k in ["floor", "border", "ceiling", "skirting", "panel", "cornice", "beam", "stairs", "lamp", "doorframe"]}
+    layers = {k: [] for k in ["floor", "border", "ceiling", "skirting", "panel", "cornice", "beam", "stairs", "lamp", "doorframe", "rib", "pipe", "pilaster", "wallbox", "pillar"]}
     ents = []
     room_of = {}
     for i, r in enumerate(level["rooms"]):
@@ -211,6 +245,20 @@ def build(level):
         if vw: W_.add((x, y))
         if vs: S.add((y, x))
         if vn: N.add((y, x))
+    pillars = set()
+    for (x, y) in list(room_of):
+        for d in ((1, 0), (0, 1)):
+            v = (x + d[0], y + d[1])
+            if v in cells: continue
+            if all((v[0] + dx, v[1] + dy) in cells for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                pillars.add(v)
+    for (vx, vy) in pillars:
+        E.discard((vx - 1, vy)); W_.discard((vx + 1, vy)); S.discard((vy - 1, vx)); N.discard((vy + 1, vx))
+        c = cells[(vx - 1, vy)]; fz, cz = floor_u(c), ceil_of(c)
+        poly = octagon(vx * CELL + CELL / 2, Y(vy + 1) + CELL / 2, CELL / 2)
+        layers["pillar"].append(prism(poly, base, fz + 16, "kick", "kick"))
+        layers["pillar"].append(prism(poly, fz + 16, cz - 16, panel_tex(hash01(vx, vy)), "chamfer"))
+        layers["pillar"].append(prism(poly, cz - 16, top, "chamfer", "chamfer"))
     for (x, y), (ew, ns) in corners.items():
         c = cells[(x, y)]; fz, cz = floor_u(c), ceil_of(c)
         X0, X1, Z0, Z1 = x * CELL, (x + 1) * CELL, Y(y + 1), Y(y)        # Z0 = south (screen down), Z1 = north
@@ -293,6 +341,95 @@ def build(level):
             if dx == -1: layers["border"].append(box(X, Z0, fz, X + 12, Z1, fz + 2, "floor_grate"))
             if dy == 1: layers["border"].append(box(X, Z0, fz, X + CELL, Z0 + 12, fz + 2, "floor_grate"))
             if dy == -1: layers["border"].append(box(X, Z1 - 12, fz, X + CELL, Z1, fz + 2, "floor_grate"))
+
+    # --- depth pass. Everything here is decoration a hand edit can delete by layer.
+    def corridor(p): return p in cells and p not in room_of and cells[p]["t"] in (FLOOR, DOOR, LOCKED, STAIRS)
+    def wall_sides(x, y):
+        """void neighbours of a room cell: list of (dx, dy)."""
+        return [(dx, dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)) if (x + dx, y + dy) not in cells]
+    # corridor ribs: every 4th cell across an E-W or N-S run, posts on both walls + lintel
+    for (x, y), c in cells.items():
+        if not corridor((x, y)) or c["t"] != FLOOR: continue
+        fz, cz = floor_u(c), ceil_of(c)
+        ew = corridor((x + 1, y)) and corridor((x - 1, y)); ns = corridor((x, y + 1)) and corridor((x, y - 1))
+        if ew and not ns and x % 4 == 0 and not corridor((x, y - 1)):
+            k = 0
+            while corridor((x, y + k + 1)): k += 1
+            Z0, Z1 = Y(y + k + 1), Y(y); X0 = x * CELL + 24
+            layers["rib"].append(box(X0, Z0, cz - 20, X0 + 16, Z1, cz, "rib"))
+            layers["rib"].append(box(X0, Z1 - 16, fz, X0 + 16, Z1, cz, "rib"))
+            layers["rib"].append(box(X0, Z0, fz, X0 + 16, Z0 + 16, cz, "rib"))
+        if ns and not ew and y % 4 == 0 and not corridor((x - 1, y)):
+            k = 0
+            while corridor((x + k + 1, y)): k += 1
+            X0, X1 = x * CELL, (x + k + 1) * CELL; Z0 = Y(y + 1) + 24
+            layers["rib"].append(box(X0, Z0, cz - 20, X1, Z0 + 16, cz, "rib"))
+            layers["rib"].append(box(X0, Z0, fz, X0 + 16, Z0 + 16, cz, "rib"))
+            layers["rib"].append(box(X1 - 16, Z0, fz, X1, Z0 + 16, cz, "rib"))
+    # overhead pipe pairs along corridor runs, hugging one wall
+    done = set()
+    for (x, y), c in cells.items():
+        if not corridor((x, y)) or (x, y) in done: continue
+        if corridor((x + 1, y)) and not corridor((x, y - 1)):          # E-W run with a north wall
+            x0 = x
+            while corridor((x0 - 1, y)) and not corridor((x0 - 1, y - 1)): x0 -= 1
+            x1 = x
+            while corridor((x1 + 1, y)) and not corridor((x1 + 1, y - 1)): x1 += 1
+            for xx in range(x0, x1 + 1): done.add((xx, y))
+            if x1 - x0 < 2: continue
+            cz = min(ceil_of(cells[(xx, y)]) for xx in range(x0, x1 + 1))
+            zw = Y(y)                                                      # wall plane (north)
+            for off in (14, 30):
+                layers["pipe"].append(extrude("x", x0 * CELL + 8, (x1 + 1) * CELL - 8, octagon(zw - off, cz - 22, 6), "pipe"))
+        elif corridor((x, y + 1)) and not corridor((x - 1, y)):         # N-S run with a west wall
+            y0 = y
+            while corridor((x, y0 - 1)) and not corridor((x - 1, y0 - 1)): y0 -= 1
+            y1 = y
+            while corridor((x, y1 + 1)) and not corridor((x - 1, y1 + 1)): y1 += 1
+            for yy in range(y0, y1 + 1): done.add((x, yy))
+            if y1 - y0 < 2: continue
+            cz = min(ceil_of(cells[(x, yy)]) for yy in range(y0, y1 + 1))
+            xw = x * CELL
+            for off in (14, 30):
+                layers["pipe"].append(extrude("y", Y(y1 + 1) + 8, Y(y0) - 8, octagon(xw + off, cz - 22, 6), "pipe"))
+    # room walls: pilasters every 4 cells, vertical pipes, wall boxes, vents, crates
+    for (x, y), c in cells.items():
+        if (x, y) not in room_of or c["t"] != FLOOR or (x, y) in corners: continue
+        sides = wall_sides(x, y)
+        if not sides: continue
+        fz, cz = floor_u(c), ceil_of(c)
+        X0, X1, Z0, Z1 = x * CELL, (x + 1) * CELL, Y(y + 1), Y(y)
+        h = hash01(x * 11 + 3, y * 17 + 5)
+        for (dx, dy) in sides:
+            # frame in wall-local terms: `along` is the wall direction, `into` the room
+            def wall_box(depth, w, z0, z1, tex, centre=0.5):
+                """a box against this wall: `w` wide along the wall, `depth` into the room, z0..z1 tall"""
+                if dx == 1:   return box(X1 - depth, Z0 + (CELL - w) * centre, z0, X1, Z0 + (CELL - w) * centre + w, z1, tex)
+                if dx == -1:  return box(X0, Z0 + (CELL - w) * centre, z0, X0 + depth, Z0 + (CELL - w) * centre + w, z1, tex)
+                if dy == 1:   return box(X0 + (CELL - w) * centre, Z0, z0, X0 + (CELL - w) * centre + w, Z0 + depth, z1, tex)
+                if dy == -1:  return box(X0 + (CELL - w) * centre, Z1 - depth, z0, X0 + (CELL - w) * centre + w, Z1, z1, tex)
+            def wall_pipe(r, off):
+                if dx == 1:   return prism(octagon(X1 - off, (Z0 + Z1) / 2, r), fz, cz, "pipe", "pipe")
+                if dx == -1:  return prism(octagon(X0 + off, (Z0 + Z1) / 2, r), fz, cz, "pipe", "pipe")
+                if dy == 1:   return prism(octagon((X0 + X1) / 2, Z0 + off, r), fz, cz, "pipe", "pipe")
+                if dy == -1:  return prism(octagon((X0 + X1) / 2, Z1 - off, r), fz, cz, "pipe", "pipe")
+            along = y if dx else x
+            if along % 4 == 0:
+                layers["pilaster"].append(wall_box(12, 32, fz, cz, "pilaster"))
+                continue
+            if h < .07:
+                layers["pipe"].append(wall_pipe(7, 16))
+                layers["pipe"].append(wall_box(22, 12, fz + 60, fz + 68, "rib"))     # bracket
+            elif h < .16:
+                tex = THEME["boxes"][int(hash01(y * 7, x * 3) * len(THEME["boxes"]))]
+                layers["wallbox"].append(wall_box(6, 40, fz + 44, fz + 92, tex))
+            elif h < .22:
+                layers["wallbox"].append(wall_box(5, 48, cz - 44, cz - 20, "vent"))
+            elif h < .27 and c["t"] == FLOOR:
+                p = (x, y)
+                cx_, cz_ = (X0 + X1) / 2 - dx * 14, (Z0 + Z1) / 2 + dy * 14
+                ents.append(f'"classname" "{"prop_crate_stack" if h < .245 else "prop_crate"}"\n"origin" "{cx_:g} {cz_:g} {fz + 2:g}"\n"angle" "{int(hash01(x, y) * 4) * 90}"')
+            break    # one feature per cell
 
     # --- beams every 4th row inside rooms where the ceiling is continuous
     for (x, y), c in cells.items():
@@ -434,7 +571,8 @@ def build(level):
 
     # screenshot markers: stand at the edge of a room, look at its centre
     def shot(name, r):
-        rc = [tuple(p) for p in r["cells"] if tuple(p) in cells and cells[tuple(p)]["t"] in (FLOOR, CATWALK)]
+        rc = [tuple(p) for p in r["cells"] if tuple(p) in cells and cells[tuple(p)]["t"] in (FLOOR, CATWALK)
+              and all((p[0] + dx, p[1] + dy) in cells for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))]   # interior cells only
         if not rc: return
         mx = sum(p[0] for p in rc) / len(rc) + .5; my = sum(p[1] for p in rc) / len(rc) + .5
         sx, sy = max(rc, key=lambda p: abs(p[0] + .5 - mx) + abs(p[1] + .5 - my))      # farthest floor cell
@@ -443,6 +581,16 @@ def build(level):
         sf = cells[(int(sx), int(sy))]["f"]
         ents.append(f'"classname" "shot"\n"origin" "{sx * CELL:g} {Y(sy):g} {sf * LVL + int(1.6 * U):g}"\n"angle" "{ang:.0f}"\n"shot_name" "{name}"')
     shot("hub", hub)
+    # a corridor shot: the longest straight corridor run, looking down it
+    best = None
+    for (x, y), c in cells.items():
+        if not corridor((x, y)): continue
+        k = 0
+        while corridor((x + k + 1, y)): k += 1
+        if best is None or k > best[0]: best = (k, x, y)
+    if best and best[0] >= 3:
+        k, x, y = best; c = cells[(x, y)]
+        ents.append(f'"classname" "shot"\n"origin" "{(x + .5) * CELL:g} {Y(y + .5):g} {floor_u(c) + int(1.6 * U):g}"\n"angle" "0"\n"shot_name" "corridor"')
     for i in (1, 2, 5, 8):
         if i < len(level["rooms"]): shot(level["rooms"][i]["name"], level["rooms"][i])
     return layers, ents
