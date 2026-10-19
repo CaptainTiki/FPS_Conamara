@@ -14,3 +14,7 @@ export_presets.cfg
 # dev screenshots
 shots/*.png
 shots/*.txt
+
+# build droppings
+shots/*.import
+__pycache__/
